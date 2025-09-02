@@ -1,0 +1,29 @@
+{
+  "xml": "g2_eval.xml",
+  "target": "lego_01",
+  "pose_world": {
+    "position": [
+      0.0,
+      0.0,
+      0.18
+    ],
+    "rpy_rad": [
+      0.0,
+      0.0,
+      1.5707963267948966
+    ]
+  },
+  "gripper_cmd": 0.02,
+  "lift": 0.06,
+  "z_before": 0.007386062285555768,
+  "z_after": 0.007366836066886489,
+  "dz": -1.9226218669278657e-05,
+  "contacts": {
+    "left_F": 0.0,
+    "right_F": 0.0,
+    "sum_F": 0.0,
+    "hitL": false,
+    "hitR": false
+  },
+  "success": false
+}

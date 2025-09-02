@@ -1,0 +1,803 @@
+<?xml version="1.0" ?>
+<mujoco>
+  <compiler angle="radian" meshdir="assets" texturedir="assets"/>
+  
+  <option timestep="0.005" iterations="50" solver="PGS" gravity="0 0 -9.81"/>
+  
+  <asset>
+    <!-- 圆盆的材质和纹理 -->
+    <material name="bowl_mat" rgba="0.8 0.6 0.4 1" shininess="0.3"/>
+    <material name="ground_mat" rgba="0.5 0.5 0.5 1"/>
+    
+    <!-- 假设你有乐高网格文件 -->
+    <mesh name="lego" file="lego_brick.obj"/>
+  </asset>
+
+  <worldbody>
+    <!-- 地面 -->
+    <body name="ground">
+      <geom name="ground" type="plane" size="2 2 0.1" material="ground_mat" friction="1.0 0.005 0.0001"/>
+    </body>
+
+    <!-- 圆盆 - 使用多个圆柱体组成 -->
+    <body name="bowl" pos="0 0 0.1">
+      <geom name="bowl_bottom" type="cylinder" size="0.35 0.02" pos="0 0 0" material="bowl_mat" friction="1.5 0.01 0.0001"/>
+      
+      <!-- 圆盆的侧壁 - 使用多个薄圆环 -->
+      <geom name="bowl_wall_1" type="cylinder" size="0.35 0.02" pos="0 0 0.04" material="bowl_mat" friction="1.5 0.01 0.0001"/>
+      <geom name="bowl_wall_2" type="cylinder" size="0.34 0.02" pos="0 0 0.08" material="bowl_mat" friction="1.5 0.01 0.0001"/>
+      <geom name="bowl_wall_3" type="cylinder" size="0.33 0.02" pos="0 0 0.12" material="bowl_mat" friction="1.5 0.01 0.0001"/>
+      <geom name="bowl_wall_4" type="cylinder" size="0.32 0.02" pos="0 0 0.16" material="bowl_mat" friction="1.5 0.01 0.0001"/>
+      <geom name="bowl_wall_5" type="cylinder" size="0.31 0.02" pos="0 0 0.20" material="bowl_mat" friction="1.5 0.01 0.0001"/>
+      
+      <!-- 或者使用更简单的方式 - 一个带孔的圆柱体 -->
+      <!-- <geom name="bowl_outer" type="cylinder" size="0.35 0.15" pos="0 0 0.07" material="bowl_mat" friction="1.5 0.01 0.0001"/>
+      <geom name="bowl_inner" type="cylinder" size="0.30 0.12" pos="0 0 0.10" rgba="0 0 0 0" contype="0" conaffinity="0"/> -->
+    </body>
+
+    <!-- 更好的圆盆设计 - 使用capsule形状 -->
+    <body name="bowl_better" pos="0.8 0 0.1">
+      <!-- 盆底 -->
+      <geom name="bowl_base" type="cylinder" size="0.4 0.03" pos="0 0 0" material="bowl_mat" friction="1.5 0.01 0.0001"/>
+      
+      <!-- 盆壁 - 使用倾斜的capsule -->
+      <geom name="bowl_side_1" type="capsule" size="0.02" fromto="0.35 0 0.02 0.32 0 0.25" material="bowl_mat" friction="1.5 0.01 0.0001"/>
+      <geom name="bowl_side_2" type="capsule" size="0.02" fromto="0 0.35 0.02 0 0.32 0.25" material="bowl_mat" friction="1.5 0.01 0.0001"/>
+      <geom name="bowl_side_3" type="capsule" size="0.02" fromto="-0.35 0 0.02 -0.32 0 0.25" material="bowl_mat" friction="1.5 0.01 0.0001"/>
+      <geom name="bowl_side_4" type="capsule" size="0.02" fromto="0 -0.35 0.02 0 -0.32 0.25" material="bowl_mat" friction="1.5 0.01 0.0001"/>
+      
+      <!-- 对角线方向的支撑 -->
+      <geom name="bowl_side_5" type="capsule" size="0.02" fromto="0.25 0.25 0.02 0.23 0.23 0.25" material="bowl_mat" friction="1.5 0.01 0.0001"/>
+      <geom name="bowl_side_6" type="capsule" size="0.02" fromto="-0.25 0.25 0.02 -0.23 0.23 0.25" material="bowl_mat" friction="1.5 0.01 0.0001"/>
+      <geom name="bowl_side_7" type="capsule" size="0.02" fromto="-0.25 -0.25 0.02 -0.23 -0.23 0.25" material="bowl_mat" friction="1.5 0.01 0.0001"/>
+      <geom name="bowl_side_8" type="capsule" size="0.02" fromto="0.25 -0.25 0.02 0.23 -0.23 0.25" material="bowl_mat" friction="1.5 0.01 0.0001"/>
+    </body>
+
+    <!-- 乐高积木 - 你的生成代码在这里 -->
+    <body name="lego_000" pos="-0.156 0.241 1.341">
+      <freejoint/>
+      <geom type="sdf" name="lego_000_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.3 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_001" pos="0.087 -0.124 1.182">
+      <freejoint/>
+      <geom type="sdf" name="lego_001_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.6 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_002" pos="-0.203 0.156 1.456">
+      <freejoint/>
+      <geom type="sdf" name="lego_002_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.7 0.2 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_003" pos="0.298 -0.089 1.234">
+      <freejoint/>
+      <geom type="sdf" name="lego_003_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.5 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_004" pos="-0.067 0.278 1.123">
+      <freejoint/>
+      <geom type="sdf" name="lego_004_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.6 0.3 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+
+    <body name="lego_05" pos="0.217 -0.104 1.432">
+      <freejoint/>
+      <geom type="sdf" name="lego_05_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.3 0.8 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_06" pos="0.034 0.128 1.346">
+      <freejoint/>
+      <geom type="sdf" name="lego_06_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.8 0.2 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_07" pos="-0.095 -0.143 1.152">
+      <freejoint/>
+      <geom type="sdf" name="lego_07_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.5 0.5 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_08" pos="0.249 -0.075 1.431">
+      <freejoint/>
+      <geom type="sdf" name="lego_08_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.1 0.8 0.8 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_09" pos="0.139 0.289 1.241">
+      <freejoint/>
+      <geom type="sdf" name="lego_09_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.1 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_10" pos="0.223 -0.286 1.269">
+      <freejoint/>
+      <geom type="sdf" name="lego_10_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.3 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_11" pos="0.044 0.060 1.491">
+      <freejoint/>
+      <geom type="sdf" name="lego_11_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.6 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_12" pos="0.091 -0.101 1.466">
+      <freejoint/>
+      <geom type="sdf" name="lego_12_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.7 0.2 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_13" pos="-0.050 -0.018 1.161">
+      <freejoint/>
+      <geom type="sdf" name="lego_13_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.5 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_14" pos="0.253 -0.159 1.360">
+      <freejoint/>
+      <geom type="sdf" name="lego_14_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.6 0.3 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_15" pos="-0.266 0.235 1.158">
+      <freejoint/>
+      <geom type="sdf" name="lego_15_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.3 0.8 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_16" pos="0.274 0.091 1.300">
+      <freejoint/>
+      <geom type="sdf" name="lego_16_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.8 0.2 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_17" pos="0.014 -0.188 1.401">
+      <freejoint/>
+      <geom type="sdf" name="lego_17_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.5 0.5 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_18" pos="0.138 -0.094 1.186">
+      <freejoint/>
+      <geom type="sdf" name="lego_18_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.1 0.8 0.8 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_19" pos="-0.033 0.024 1.088">
+      <freejoint/>
+      <geom type="sdf" name="lego_19_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.1 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_20" pos="-0.051 0.126 1.417">
+      <freejoint/>
+      <geom type="sdf" name="lego_20_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.3 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_21" pos="-0.035 -0.104 1.271">
+      <freejoint/>
+      <geom type="sdf" name="lego_21_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.6 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_22" pos="-0.239 -0.245 1.233">
+      <freejoint/>
+      <geom type="sdf" name="lego_22_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.7 0.2 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_23" pos="0.024 0.049 1.387">
+      <freejoint/>
+      <geom type="sdf" name="lego_23_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.5 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_24" pos="-0.124 0.181 1.282">
+      <freejoint/>
+      <geom type="sdf" name="lego_24_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.6 0.3 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_25" pos="-0.216 0.268 1.429">
+      <freejoint/>
+      <geom type="sdf" name="lego_25_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.3 0.8 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_26" pos="-0.096 -0.154 1.341">
+      <freejoint/>
+      <geom type="sdf" name="lego_26_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.8 0.2 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_27" pos="0.214 0.192 1.369">
+      <freejoint/>
+      <geom type="sdf" name="lego_27_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.5 0.5 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_28" pos="-0.082 0.134 1.165">
+      <freejoint/>
+      <geom type="sdf" name="lego_28_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.1 0.8 0.8 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_29" pos="-0.118 0.189 1.311">
+      <freejoint/>
+      <geom type="sdf" name="lego_29_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.1 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_30" pos="-0.001 0.178 1.489">
+      <freejoint/>
+      <geom type="sdf" name="lego_30_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.3 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_31" pos="0.034 0.113 1.001">
+      <freejoint/>
+      <geom type="sdf" name="lego_31_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.6 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_32" pos="-0.215 0.295 1.275">
+      <freejoint/>
+      <geom type="sdf" name="lego_32_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.7 0.2 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_33" pos="-0.210 0.076 1.303">
+      <freejoint/>
+      <geom type="sdf" name="lego_33_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.5 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_34" pos="0.224 0.057 1.067">
+      <freejoint/>
+      <geom type="sdf" name="lego_34_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.6 0.3 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_35" pos="-0.293 0.110 1.170">
+      <freejoint/>
+      <geom type="sdf" name="lego_35_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.3 0.8 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_36" pos="0.001 -0.088 1.182">
+      <freejoint/>
+      <geom type="sdf" name="lego_36_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.8 0.2 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_37" pos="-0.123 -0.075 1.290">
+      <freejoint/>
+      <geom type="sdf" name="lego_37_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.5 0.5 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_38" pos="0.128 -0.081 1.446">
+      <freejoint/>
+      <geom type="sdf" name="lego_38_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.1 0.8 0.8 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_39" pos="0.194 -0.000 1.058">
+      <freejoint/>
+      <geom type="sdf" name="lego_39_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.1 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_40" pos="0.018 0.178 1.006">
+      <freejoint/>
+      <geom type="sdf" name="lego_40_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.3 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_41" pos="0.182 -0.278 1.444">
+      <freejoint/>
+      <geom type="sdf" name="lego_41_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.6 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_42" pos="-0.256 0.195 1.060">
+      <freejoint/>
+      <geom type="sdf" name="lego_42_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.7 0.2 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_43" pos="0.293 0.012 1.192">
+      <freejoint/>
+      <geom type="sdf" name="lego_43_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.5 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_44" pos="-0.265 -0.158 1.191">
+      <freejoint/>
+      <geom type="sdf" name="lego_44_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.6 0.3 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_45" pos="-0.243 0.069 1.147">
+      <freejoint/>
+      <geom type="sdf" name="lego_45_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.3 0.8 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_46" pos="0.199 0.180 1.118">
+      <freejoint/>
+      <geom type="sdf" name="lego_46_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.8 0.2 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_47" pos="0.231 0.001 1.143">
+      <freejoint/>
+      <geom type="sdf" name="lego_47_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.5 0.5 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_48" pos="-0.081 -0.241 1.415">
+      <freejoint/>
+      <geom type="sdf" name="lego_48_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.1 0.8 0.8 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_49" pos="0.128 0.079 1.122">
+      <freejoint/>
+      <geom type="sdf" name="lego_49_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.1 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_50" pos="0.014 -0.171 1.001">
+      <freejoint/>
+      <geom type="sdf" name="lego_50_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.3 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_51" pos="-0.212 0.078 1.003">
+      <freejoint/>
+      <geom type="sdf" name="lego_51_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.6 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_52" pos="-0.074 -0.268 1.041">
+      <freejoint/>
+      <geom type="sdf" name="lego_52_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.7 0.2 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_53" pos="0.107 -0.239 1.317">
+      <freejoint/>
+      <geom type="sdf" name="lego_53_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.5 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_54" pos="-0.023 -0.126 1.333">
+      <freejoint/>
+      <geom type="sdf" name="lego_54_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.6 0.3 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_55" pos="-0.268 0.258 1.021">
+      <freejoint/>
+      <geom type="sdf" name="lego_55_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.3 0.8 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_56" pos="-0.059 0.092 1.165">
+      <freejoint/>
+      <geom type="sdf" name="lego_56_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.8 0.2 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_57" pos="-0.284 0.022 1.171">
+      <freejoint/>
+      <geom type="sdf" name="lego_57_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.5 0.5 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_58" pos="-0.127 0.091 1.440">
+      <freejoint/>
+      <geom type="sdf" name="lego_58_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.1 0.8 0.8 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_59" pos="0.069 0.074 1.199">
+      <freejoint/>
+      <geom type="sdf" name="lego_59_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.1 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_60" pos="0.210 -0.203 1.211">
+      <freejoint/>
+      <geom type="sdf" name="lego_60_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.3 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_61" pos="0.271 -0.058 1.310">
+      <freejoint/>
+      <geom type="sdf" name="lego_61_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.6 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_62" pos="0.290 -0.251 1.221">
+      <freejoint/>
+      <geom type="sdf" name="lego_62_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.7 0.2 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_63" pos="-0.224 0.213 1.083">
+      <freejoint/>
+      <geom type="sdf" name="lego_63_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.5 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_64" pos="-0.131 -0.148 1.318">
+      <freejoint/>
+      <geom type="sdf" name="lego_64_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.6 0.3 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_65" pos="0.162 -0.180 1.155">
+      <freejoint/>
+      <geom type="sdf" name="lego_65_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.3 0.8 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_66" pos="0.015 -0.104 1.317">
+      <freejoint/>
+      <geom type="sdf" name="lego_66_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.8 0.2 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_67" pos="0.177 -0.121 1.452">
+      <freejoint/>
+      <geom type="sdf" name="lego_67_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.5 0.5 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_68" pos="-0.071 -0.210 1.425">
+      <freejoint/>
+      <geom type="sdf" name="lego_68_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.1 0.8 0.8 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_69" pos="-0.252 -0.051 1.217">
+      <freejoint/>
+      <geom type="sdf" name="lego_69_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.1 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_70" pos="0.085 -0.042 1.097">
+      <freejoint/>
+      <geom type="sdf" name="lego_70_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.3 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_71" pos="-0.207 0.091 1.216">
+      <freejoint/>
+      <geom type="sdf" name="lego_71_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.6 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_72" pos="-0.183 -0.077 1.486">
+      <freejoint/>
+      <geom type="sdf" name="lego_72_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.7 0.2 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_73" pos="0.121 -0.003 1.420">
+      <freejoint/>
+      <geom type="sdf" name="lego_73_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.5 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_74" pos="0.224 -0.000 1.459">
+      <freejoint/>
+      <geom type="sdf" name="lego_74_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.6 0.3 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_75" pos="0.081 -0.024 1.185">
+      <freejoint/>
+      <geom type="sdf" name="lego_75_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.3 0.8 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_76" pos="0.240 0.242 1.094">
+      <freejoint/>
+      <geom type="sdf" name="lego_76_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.8 0.2 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_77" pos="0.186 -0.084 1.091">
+      <freejoint/>
+      <geom type="sdf" name="lego_77_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.5 0.5 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_78" pos="0.272 -0.124 1.222">
+      <freejoint/>
+      <geom type="sdf" name="lego_78_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.1 0.8 0.8 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_79" pos="0.170 -0.246 1.092">
+      <freejoint/>
+      <geom type="sdf" name="lego_79_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.1 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_80" pos="0.116 -0.239 1.262">
+      <freejoint/>
+      <geom type="sdf" name="lego_80_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.3 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_81" pos="-0.291 -0.055 1.329">
+      <freejoint/>
+      <geom type="sdf" name="lego_81_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.6 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_82" pos="0.204 0.267 1.041">
+      <freejoint/>
+      <geom type="sdf" name="lego_82_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.7 0.2 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_83" pos="0.116 0.182 1.474">
+      <freejoint/>
+      <geom type="sdf" name="lego_83_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.5 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_84" pos="-0.269 0.135 1.462">
+      <freejoint/>
+      <geom type="sdf" name="lego_84_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.6 0.3 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_85" pos="-0.200 -0.225 1.297">
+      <freejoint/>
+      <geom type="sdf" name="lego_85_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.3 0.8 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_86" pos="-0.102 -0.246 1.100">
+      <freejoint/>
+      <geom type="sdf" name="lego_86_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.8 0.2 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_87" pos="-0.009 -0.286 1.449">
+      <freejoint/>
+      <geom type="sdf" name="lego_87_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.5 0.5 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_88" pos="0.218 -0.127 1.202">
+      <freejoint/>
+      <geom type="sdf" name="lego_88_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.1 0.8 0.8 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_89" pos="-0.268 0.214 1.207">
+      <freejoint/>
+      <geom type="sdf" name="lego_89_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.1 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_90" pos="0.231 -0.293 1.184">
+      <freejoint/>
+      <geom type="sdf" name="lego_90_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.3 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_91" pos="0.144 -0.299 1.063">
+      <freejoint/>
+      <geom type="sdf" name="lego_91_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.6 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_92" pos="-0.139 -0.215 1.241">
+      <freejoint/>
+      <geom type="sdf" name="lego_92_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.7 0.2 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_93" pos="0.291 0.211 1.279">
+      <freejoint/>
+      <geom type="sdf" name="lego_93_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.5 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_94" pos="0.294 0.142 1.003">
+      <freejoint/>
+      <geom type="sdf" name="lego_94_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.6 0.3 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_95" pos="0.231 0.010 1.406">
+      <freejoint/>
+      <geom type="sdf" name="lego_95_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.3 0.8 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_96" pos="0.096 -0.086 1.385">
+      <freejoint/>
+      <geom type="sdf" name="lego_96_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.8 0.2 0.5 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_97" pos="0.218 -0.244 1.414">
+      <freejoint/>
+      <geom type="sdf" name="lego_97_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.5 0.5 0.1 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_98" pos="-0.023 -0.121 1.054">
+      <freejoint/>
+      <geom type="sdf" name="lego_98_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.1 0.8 0.8 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+    <body name="lego_99" pos="0.184 -0.186 1.323">
+      <freejoint/>
+      <geom type="sdf" name="lego_99_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.9 0.1 0.9 1">
+        <plugin instance="sdflego"/>
+      </geom>
+    </body>
+
+
+  </worldbody>
+
+  <!-- 两侧手指对称 -->
+  <equality>
+    <joint joint1="right_joint" joint2="left_joint"/>
+  </equality>
+
+  <tendon>
+    <fixed name="grasp">
+      <joint joint="right_joint" coef="1"/>
+      <joint joint="left_joint"  coef="1"/>
+    </fixed>
+  </tendon>
+  <actuator>
+    <motor name="left_joint" joint="left_joint" ctrllimited="true" ctrlrange="-1 1" gear="1" />
+    <motor name="right_joint" joint="right_joint" ctrllimited="true" ctrlrange="-1 1" gear="1" />
+    <position name="x"    joint="x" kp="800" dampratio="1" ctrlrange="-0.25 0.25"/>
+    <position name="y"    joint="y" kp="800" dampratio="1" ctrlrange="-0.25 0.25"/>
+    <position name="lift"  joint="lift"  kp="600" dampratio="1" ctrlrange="-0.5 0.5"/>
+    <position name="rotation" joint="yaw" kp="400" dampratio="1" ctrlrange="-3.1416 3.1416"/>
+
+  </actuator>
+
+  <sensor>
+    <actuatorpos name="left_joint_p" actuator="left_joint" />
+    <actuatorvel name="left_joint_v" actuator="left_joint" />
+    <actuatorfrc name="left_joint_f" actuator="left_joint" noise="0.001" />
+    <actuatorpos name="right_joint_p" actuator="right_joint" />
+    <actuatorvel name="right_joint_v" actuator="right_joint" />
+    <actuatorfrc name="right_joint_f" actuator="right_joint" noise="0.001" />
+    <framequat name="orientation" objtype="site" noise="0.001" objname="imu" />
+    <gyro name="angular-velocity" site="imu" noise="0.005" cutoff="34.9" />
+  </sensor>
+</mujoco>
+
+  </worldbody>
+
+  <plugin>
+    <!-- SDF乐高插件配置 -->
+    <instance name="sdflego">
+      <config key="type" value="lego"/>
+    </instance>
+  </plugin>
+
+</mujoco>

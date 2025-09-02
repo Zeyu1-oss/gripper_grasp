@@ -1,0 +1,44 @@
+<mujoco model="OBJECT">
+  <extension>
+    <plugin plugin="mujoco.sdf.sdflib">
+      <instance name="sdflego">
+        <config key="aabb" value="0"/>
+      </instance>
+    </plugin>
+  </extension>
+
+  <asset>
+    <!-- SDF 网格 - 将在运行时替换 -->
+    <mesh name="object_mesh" file="PLACEHOLDER_PATH" scale="0.01 0.01 0.01">
+      <plugin instance="sdflego"/>
+    </mesh>
+  </asset>
+
+  <default>
+    <geom condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2" />
+  </default>
+
+  <!-- SDF 求解参数 -->
+  <option cone="elliptic" impratio="10" integrator="implicitfast"
+          sdf_iterations="50" sdf_initpoints="40" 
+          timestep="0.001"/>
+
+  <worldbody>
+    <!-- 物体 - 使用 SDF -->
+    <body name="object" pos="0 0 0">
+      <freejoint/>
+      <inertial pos="0 0 0" mass="0.02" diaginertia="0.001 0.001 0.001"/>
+      <geom type="sdf" name="object_geom" friction="2.0 0.01 0.00001" mesh="object_mesh" rgba="0.2 0.7 0.2 1">
+        <plugin instance="sdflego"/>
+      </geom>
+      <!-- 物体位置站点 -->
+      <site name="object_center" type="sphere" size="0.001" rgba="0 0 1 1"/>
+    </body>
+  </worldbody>
+
+  <sensor>
+    <!-- 物体位置传感器 -->
+    <framepos name="object_position" objtype="site" objname="object_center"/>
+    <framequat name="object_orientation" objtype="site" objname="object_center"/>
+  </sensor>
+</mujoco>

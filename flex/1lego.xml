@@ -1,0 +1,59 @@
+<mujoco model="Gripper-test">
+
+  <option timestep="0.002" integrator="implicitfast"/>
+
+  <default>
+    <geom solimp="0.95 0.99 0.001" solref="0.005 1" friction="0.8 0.01 0.001"/>
+  </default>
+
+  <worldbody>
+    <!-- 地面 -->
+    <geom name="floor" type="plane" size="1 1 0.1" rgba="0.8 0.9 0.8 1"/>
+
+    <!-- 手：3 自由度 (x,y,z) -->
+    <body name="hand" pos="0 0 0.3">
+      <joint name="x"    type="slide" axis="1 0 0" range="-0.3 0.3"/>
+      <joint name="y"    type="slide" axis="0 1 0" range="-0.3 0.3"/>
+      <joint name="lift" type="slide" axis="0 0 1" range="0.0 1"/>
+
+      <geom name="palm" type="box" size="0.05 0.05 0.02" rgba=".2 .2 .2 1"/>
+
+      <body name="right_gripper">
+        <joint name="right" type="slide" axis="-1 0 0" range="0 0.1"/>
+        <geom name="right_finger" type="box" size="0.01 0.02 0.05" pos=".07 0 -.05" rgba=".2 .2 .2 1"/>
+      </body>
+
+      <body name="left_gripper">
+        <joint name="left" type="slide" axis="1 0 0" range="0 0.1"/>
+        <geom name="left_finger" type="box" size="0.01 0.02 0.05" pos="-.07 0 -.05" rgba=".2 .2 .2 1"/>
+      </body>
+    </body>
+
+    <!-- 一个积木 -->
+    <body name="lego" pos="0.0 0.0 0.025">
+      <freejoint/>
+      <geom name="lego_geom" type="box" size="0.02 0.02 0.02" mass="0.05" rgba="0.9 0.2 0.2 1"/>
+    </body>
+  </worldbody>
+
+  <equality>
+    <joint joint1="right" joint2="left"/>
+  </equality>
+
+  <tendon>
+    <fixed name="grasp">
+      <joint joint="right" coef="1"/>
+      <joint joint="left"  coef="1"/>
+    </fixed>
+  </tendon>
+
+  <actuator>
+    <!-- 手移动 -->
+    <position name="x"    joint="x"    kp="800" dampratio="1" ctrlrange="-0.3 0.3"/>
+    <position name="y"    joint="y"    kp="1000" dampratio="1" ctrlrange="-0.3 0.3"/>
+    <position name="lift" joint="lift" kp="1000" dampratio="1" ctrlrange="0.0 0.6"/>
+
+    <!-- 夹爪 -->
+    <position name="grasp" tendon="grasp" kp="1000" dampratio="1" ctrlrange="0 1"/>
+  </actuator> 
+</mujoco>

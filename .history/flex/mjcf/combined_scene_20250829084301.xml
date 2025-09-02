@@ -1,0 +1,5 @@
+<mujoco model="Gripper-LEGO-Scene">
+  <option timestep="0.001" gravity="0 0 -9.81"/>
+  <include file="g2_gripper.xml"/>
+  <include file="lego.xml"/>
+</mujoco>

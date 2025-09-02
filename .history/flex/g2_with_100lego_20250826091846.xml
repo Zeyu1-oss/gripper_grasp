@@ -1,0 +1,144 @@
+<mujoco model="Gripper-with-LEGO-tray">
+
+  <!-- 场景、机器人 -->
+  <include file="scene.xml"/>
+
+    <!-- <include file="g2.xml"/> -->
+  <asset>
+    <mesh name="base_link" file="base_link.STL"/>
+    <mesh name="left_link" file="left_link.STL"/>
+    <mesh name="right_link" file="right_link.STL"/>
+    <material name="matplane" reflectance="0." texture="texplane1" texrepeat="1 1" texuniform="true" />
+    <material name="visualgeom" rgba="0.5 0.9 0.2 1" />
+  </asset>
+
+  <default>
+    <joint limited="true" damping="0.01" armature="0.01" frictionloss="0.001" />
+    <geom condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2" />
+    <motor ctrllimited="true" />
+    <equality solref="0.001 2" />
+    <default class="visualgeom">
+      <geom material="visualgeom" condim="1" contype="0" conaffinity="0" />
+    </default>
+  </default>
+  <!-- SDF 求解参数 -->
+  <option cone="elliptic" impratio="10" integrator="implicitfast"
+          sdf_iterations="20" sdf_initpoints="30" ccd_iterations="10"
+          timestep="0.001"/>
+
+  <!--  sdflib -->
+  <extension>
+    <plugin plugin="mujoco.sdf.sdflib">
+      <instance name="sdflego">
+        <config key="aabb" value="0"/>
+      </instance>
+    </plugin>
+  </extension>
+<extension>
+  <plugin plugin="mujoco.sdf.bowl">
+    <instance name="bowl">
+      <!-- 尺寸按你原托盘 ~20cm 工作区调整：半径≈0.20m，高度≈0.10m -->
+      <config key="radius"    value="0.20"/>
+      <config key="height"    value="0.10"/>
+      <config key="thickness" value="0.010"/>
+    </instance>
+  </plugin>
+</extension>
+  <asset>
+    <mesh name="lego" file="../lego.obj" scale="0.01 0.01 0.01">
+      <plugin instance="sdflego"/>
+    </mesh>
+    
+  </asset>
+  
+  <default>
+    <geom solimp="0.99 0.999 0.0001" solref="0.002 1" friction="0.8 0.01 0.001"/>
+  </default>
+
+  <worldbody>
+
+    <!-- 托盘 -->
+    <body name="tray" pos="0 0 0.2">
+  <!-- 金字塔底部由四个三角形组成 -->
+      <geom name="tray_triangle1" type="box" size="0.141 0.141 0.01" euler="30 -30 0" pos="0.10 0.10 0.01" rgba="0.7 0.6 0.6 1" contype="1" conaffinity="1"/>
+      <geom name="tray_triangle2" type="box" size="0.141 0.141 0.01" euler="30 30 0" pos="-0.10 0.10 0.01" rgba="0.6 0.7 0.6 1" contype="1" conaffinity="1"/>
+      <geom name="tray_triangle3" type="box" size="0.141 0.141 0.01" euler="-30 -30 0" pos="0.10 -0.10 0.01" rgba="0.6 0.6 0.7 1" contype="1" conaffinity="1"/>
+      <geom name="tray_triangle4" type="box" size="0.141 0.141 0.01" euler="-30 30 0" pos="-0.10 -0.10 0.01" rgba="0.7 0.7 0.6 1" contype="1" conaffinity="1"/>
+  
+  <!-- 保持原有墙壁结构 -->
+       <geom name="tray_wall_xpos" type="box" size="0.005 0.20 0.02"
+          pos="0.205 0 0.03" rgba="0.6 0.6 0.6 1"/>
+       <geom name="tray_wall_xneg" type="box" size="0.005 0.20 0.02"
+           pos="-0.205 0 0.03" rgba="0.6 0.6 0.6 1"/>
+       <geom name="tray_wall_ypos" type="box" size="0.20 0.005 0.02"
+          pos="0 0.205 0.03" rgba="0.6 0.6 0.6 1"/>
+       <geom name="tray_wall_yneg" type="box" size="0.20 0.005 0.02"
+           pos="0 -0.205 0.03" rgba="0.6 0.6 0.6 1"/>
+      </body>
+    <!-- g2 -->
+
+  <body name="palm" pos="0 0 0.5">
+    <joint name="x"    type="slide" axis="1 0 0" range="-0.25 0.25"/>
+    <joint name="y"    type="slide" axis="0 1 0" range="-0.25 0.25"/>
+    <joint name="lift" type="slide" axis="0 0 1" range="-0.5 0.50"/>
+    <joint name="yaw"  type="hinge" axis="0 0 1" limited="true" range="-3.5416 3.5416" ref="0" damping="0.001" armature="0.0" frictionloss="0.0"/>
+
+    <geom type="box" size="0.1 0.1 0.01" rgba="0.2 0.2 0.8 0.5"/>
+      <body name="base" pos="0 0 0" quat="0 1 0 0">
+
+        <site name="imu" size="0.01" pos="0 0 0" />
+        <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="base_link" contype="1" conaffinity="0"  group="1" class="visualgeom" />
+            <geom type="mesh" mesh="base_link" contype="0" conaffinity="0" rgba="0.8 0.8 0.8 1"/>
+        <body name="left_link" pos="0 0 0.0635" quat="0.707105 0 -0.707108 0">
+          <inertial pos="0.018307 5.9636e-06 0.012505" quat="0 0.798204 0 0.602388" mass="0.054004" diaginertia="5.10732e-05 4.78e-05 2.24468e-05" />
+          <joint name="left_joint" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.0166" />
+          <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="left_link" contype="1" conaffinity="0"  group="1" class="visualgeom" />
+          <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="left_link" />
+        </body>
+        <body name="right_link" pos="0 0 0.0635" quat="-2.59734e-06 0.707105 2.59735e-06 0.707108">
+          <inertial pos="0.018307 -6.8572e-07 0.012505" quat="0 0.798204 0 0.602388" mass="0.054004" diaginertia="5.10732e-05 4.78e-05 2.24468e-05" />
+          <joint name="right_joint" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.0166" />
+          <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="right_link" contype="1" conaffinity="0"  group="1" class="visualgeom" />
+          <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="right_link" />
+        </body>
+      </body>
+  </body>
+  
+  <include file="generated_lego.xml"/>
+
+  </worldbody>
+
+  <!-- 两侧手指对称 -->
+  <equality>
+    <joint joint1="right_joint" joint2="left_joint"/>
+  </equality>
+
+  <tendon>
+    <fixed name="grasp">
+      <joint joint="right_joint" coef="1"/>
+      <joint joint="left_joint"  coef="1"/>
+    </fixed>
+  </tendon>
+  <actuator>
+    <motor name="left_joint" joint="left_joint" ctrllimited="true" ctrlrange="-1 1" gear="1" />
+    <motor name="right_joint" joint="right_joint" ctrllimited="true" ctrlrange="-1 1" gear="1" />
+    <position name="x"    joint="x" kp="800" dampratio="1" ctrlrange="-0.25 0.25"/>
+    <position name="y"    joint="y" kp="800" dampratio="1" ctrlrange="-0.25 0.25"/>
+    <position name="lift"  joint="lift"  kp="600" dampratio="1" ctrlrange="-0.5 0.5"/>
+    <position name="rotation" joint="yaw" kp="20000" dampratio="1"
+          ctrlrange="-3.5416 3.5416" forcerange="-10000 10000" gear="1"/>
+
+
+  </actuator>
+
+  <sensor>
+    <actuatorpos name="left_joint_p" actuator="left_joint" />
+    <actuatorvel name="left_joint_v" actuator="left_joint" />
+    <actuatorfrc name="left_joint_f" actuator="left_joint" noise="0.001" />
+    <actuatorpos name="right_joint_p" actuator="right_joint" />
+    <actuatorvel name="right_joint_v" actuator="right_joint" />
+    <actuatorfrc name="right_joint_f" actuator="right_joint" noise="0.001" />
+    <framequat name="orientation" objtype="site" noise="0.001" objname="imu" />
+    <gyro name="angular-velocity" site="imu" noise="0.005" cutoff="34.9" />
+  </sensor>
+</mujoco>

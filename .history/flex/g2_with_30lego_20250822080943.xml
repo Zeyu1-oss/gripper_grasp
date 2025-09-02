@@ -1,0 +1,138 @@
+<mujoco model="Gripper-with-LEGO-tray">
+  <!-- 如需地面/相机，可保留你的 scene.xml -->
+  <include file="scene.xml"/>
+  <include file="g2.xml"/>
+  <!-- SDF 求解参数，可按需要调大或调小 -->
+  <option cone="elliptic" impratio="10" integrator="implicitfast"
+        sdf_iterations="50" sdf_initpoints="40" ccd_iterations="100"
+        timestep="0.001"/>
+  <!--  sdflib -->
+  <extension>
+    <plugin plugin="mujoco.sdf.sdflib">
+      <instance name="sdflego">
+        <config key="aabb" value="0"/>
+      </instance>
+    </plugin>
+  </extension>
+
+  <asset>
+    <mesh name="lego" file="../lego.obj" scale="0.01 0.01 0.01">
+      <plugin instance="sdflego"/>
+    </mesh>
+  </asset>
+  
+<default>
+  <geom solimp="0.99 0.999 0.0001" solref="0.002 1" friction="0.8 0.01 0.001"/>
+</default>
+
+  <worldbody>
+
+    <!-- 托盘：底 + 四壁（“盆”） -->
+    <body name="tray" pos="0 0 0">
+      <!-- 底板：40 x 40 cm，厚 1 cm -->
+      <geom name="tray_floor" type="box" size="0.20 0.20 0.005"
+            pos="0 0 0.005" rgba="0.7 0.7 0.7 1" contype="1" conaffinity="1"/>
+
+      <geom name="tray_wall_xpos" type="box" size="0.005 0.20 0.02"
+            pos="0.205 0 0.03" rgba="0.6 0.6 0.6 1"/>
+      <geom name="tray_wall_xneg" type="box" size="0.005 0.20 0.02"
+            pos="-0.205 0 0.03" rgba="0.6 0.6 0.6 1"/>
+      <geom name="tray_wall_ypos" type="box" size="0.20 0.005 0.02"
+            pos="0 0.205 0.03" rgba="0.6 0.6 0.6 1"/>
+      <geom name="tray_wall_yneg" type="box" size="0.20 0.005 0.02"
+            pos="0 -0.205 0.03" rgba="0.6 0.6 0.6 1"/>
+    </body>
+
+    <body name='g2' pos="0 0 0" euler="0 0 0">
+      <joint type="free" frictionloss="0.0001" />
+      <include file="mmk2.xml"/>
+    </body>
+
+    <!-- 10 个 SDF-LEGO，摆成 2 x 5 的小阵列，落在托盘里 -->
+    <!-- 单块质量和颜色可按需调整；每个 geom 都有 plugin instance="sdflego" -->
+   
+      <body name="lego_00" pos="-0.12 -0.06 0.08">
+        <freejoint/>
+        <geom type="sdf" name="lego_00_geom"  friction="2.0 0.01 0.00001" mesh="lego" mass="0.02" rgba="0.9 0.3 0.1 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_01" pos="-0.06 -0.06 0.08">
+        <freejoint/>
+        <geom type="sdf" name="lego_01_geom" friction="2.0 0.01 0.00001"  mesh="lego" mass="0.02" rgba="0.9 0.6 0.1 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_02" pos="0.00 -0.06 0.09">
+        <freejoint/>
+        <geom type="sdf" name="lego_02_geom"  friction="2.0 0.01 0.00001" mesh="lego" mass="0.02" rgba="0.2 0.7 0.2 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_03" pos="0.06 -0.06 0.09">
+        <freejoint/>
+        <geom type="sdf" name="lego_03_geom" friction="2.0 0.01 0.00001" mesh="lego" mass="0.02" rgba="0.2 0.5 0.9 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_04" pos="0.12 -0.06 0.09">
+        <freejoint/>
+        <geom type="sdf" name="lego_04_geom"  friction="2.0 0.01 0.0001" mesh="lego" mass="0.02" rgba="0.6 0.3 0.9 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+
+      <!-- 第 2 行 (y=+0.06) -->
+      <body name="lego_05" pos="-0.12 0.06 0.1">
+        <freejoint/>
+        <geom type="sdf" name="lego_05_geom"  friction="2.0 0.01 0.00001" mesh="lego" mass="0.02" rgba="0.9 0.3 0.1 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_06" pos="-0.06 0.06 0.1">
+        <freejoint/>
+        <geom type="sdf" name="lego_06_geom" friction="2.0 0.01 0.00001" mesh="lego" mass="0.02" rgba="0.9 0.6 0.1 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_07" pos="0.00 0.06 0.12">
+        <freejoint/>
+        <geom type="sdf" name="lego_07_geom"  friction="2.0 0.01 0.00001" mesh="lego" mass="0.02" rgba="0.2 0.7 0.2 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_08" pos="0.06 0.06 0.04">
+        <freejoint/>
+        <geom type="sdf" name="lego_08_geom"  friction="2.0 0.01 0.00001" mesh="lego" mass="0.02" rgba="0.2 0.5 0.9 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_09" pos="0.12 0.06 0.1">
+        <freejoint/>
+        <geom type="sdf" name="lego_09_geom"  friction="2.0 0.01 0.00001" mesh="lego" mass="0.02" rgba="0.6 0.3 0.9 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+
+  </worldbody>
+
+  <!-- 两侧手指对称 -->
+  <equality>
+    <joint joint1="right" joint2="left"/>
+  </equality>
+
+  <tendon>
+    <fixed name="grasp">
+      <joint joint="right" coef="1"/>
+      <joint joint="left"  coef="1"/>
+    </fixed>
+  </tendon>
+
+  <actuator>
+    <position name="x" joint="x" kp="800" ctrlrange="-0.25 0.25"/>
+    <position name="y" joint="y" kp="800" ctrlrange="-0.25 0.25"/>
+    <position name="lift" joint="lift" kp="600" ctrlrange="-0.05 0.5"/>
+    <position name="left_ctrl" joint="left_joint" kp="200" ctrlrange="0 0.0366"/>
+    <position name="right_ctrl" joint="right_joint" kp="200" ctrlrange="0 0.0366"/>
+  </actuator>
+</mujoco>

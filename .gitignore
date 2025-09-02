@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# 构建/日志
+build/
+dist/
+*.log
+
+# 结果与大文件（按需调整）
+results/
+*.npy
+*.npz
+
+# 3D/数据（要么 LFS，要么忽略）
+data/
+datasets/

@@ -1,0 +1,4 @@
+<mujoco model="lego_with_g2">
+  <include file="lego_scene.xml"/>
+  <include file="g2.xml"/>
+</mujoco>

@@ -1,0 +1,35 @@
+<mujoco model="iiwa14">
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+
+  <option integrator="implicitfast" iterations="200" sdf_iterations="40" sdf_initpoints="80" ccd_iterations="100"/>
+
+  <extension>
+    <plugin plugin="mujoco.sdf.sdflib">
+        <instance name="sdf">
+            <config key="aabb" value="0"/>
+        </instance>
+    </plugin>
+  </extension>
+
+  <asset>
+    <mesh name="pin_20" file="pin_20.STL"><plugin instance="sdf"></plugin></mesh>
+    <mesh name="hole_22" file="hole_22.STL"><plugin instance="sdf"/></mesh>
+  </asset>
+
+  <worldbody>
+    <light name="top" pos="0 0 2" mode="trackcom"/>
+
+    <body name="hole" pos="0.5 0 0">
+      <inertial mass="2" pos="0 0 0" diaginertia="0.05 0.05 0.03"/>
+      <geom name="hole_22" type="sdf" mesh="hole_22" contype="1" conaffinity="1"></geom>
+    </body>
+
+    <body name="base" childclass="iiwa">
+        <body name="link_tool" pos="0.0 0.0 0.033">
+            <geom name="tool" type="sdf" mesh="pin_20" contype="1" conaffinity="1"></geom>       
+            <inertial mass="1.0" pos="0 0 0.033" diaginertia="0.001 0.001 0.0003" />        
+        </body>
+    </body>
+  </worldbody>
+
+</mujoco>

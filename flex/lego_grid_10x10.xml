@@ -1,0 +1,601 @@
+<!-- 仅片段：放在 <worldbody> 内可 include -->
+  <body name="lego_base_00_00" pos="-0.0900 -0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_00_00_geom" mesh="lego" rgba="0.65 0.22 0.39 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_00_01" pos="-0.0700 -0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_00_01_geom" mesh="lego" rgba="0.36 0.72 0.67 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_00_02" pos="-0.0500 -0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_00_02_geom" mesh="lego" rgba="0.82 0.26 0.50 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_00_03" pos="-0.0300 -0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_00_03_geom" mesh="lego" rgba="0.22 0.35 0.55 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_00_04" pos="-0.0100 -0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_00_04_geom" mesh="lego" rgba="0.22 0.34 0.65 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_00_05" pos="0.0100 -0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_00_05_geom" mesh="lego" rgba="0.58 0.35 0.61 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_00_06" pos="0.0300 -0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_00_06_geom" mesh="lego" rgba="0.77 0.20 0.76 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_00_07" pos="0.0500 -0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_00_07_geom" mesh="lego" rgba="0.69 0.44 0.31 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_00_08" pos="0.0700 -0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_00_08_geom" mesh="lego" rgba="0.87 0.44 0.26 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_00_09" pos="0.0900 -0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_00_09_geom" mesh="lego" rgba="0.27 0.79 0.62 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_01_00" pos="-0.0900 -0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_01_00_geom" mesh="lego" rgba="0.76 0.71 0.58 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_01_01" pos="-0.0700 -0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_01_01_geom" mesh="lego" rgba="0.88 0.46 0.59 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_01_02" pos="-0.0500 -0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_01_02_geom" mesh="lego" rgba="0.78 0.63 0.80 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_01_03" pos="-0.0300 -0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_01_03_geom" mesh="lego" rgba="0.60 0.69 0.23 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_01_04" pos="-0.0100 -0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_01_04_geom" mesh="lego" rgba="0.36 0.40 0.26 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_01_05" pos="0.0100 -0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_01_05_geom" mesh="lego" rgba="0.36 0.27 0.39 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_01_06" pos="0.0300 -0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_01_06_geom" mesh="lego" rgba="0.64 0.46 0.46 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_01_07" pos="0.0500 -0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_01_07_geom" mesh="lego" rgba="0.35 0.39 0.86 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_01_08" pos="0.0700 -0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_01_08_geom" mesh="lego" rgba="0.65 0.63 0.32 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_01_09" pos="0.0900 -0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_01_09_geom" mesh="lego" rgba="0.71 0.31 0.47 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_02_00" pos="-0.0900 -0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_02_00_geom" mesh="lego" rgba="0.89 0.65 0.59 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_02_01" pos="-0.0700 -0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_02_01_geom" mesh="lego" rgba="0.68 0.79 0.74 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_02_02" pos="-0.0500 -0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_02_02_geom" mesh="lego" rgba="0.36 0.22 0.42 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_02_03" pos="-0.0300 -0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_02_03_geom" mesh="lego" rgba="0.39 0.35 0.86 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_02_04" pos="-0.0100 -0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_02_04_geom" mesh="lego" rgba="0.81 0.42 0.66 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_02_05" pos="0.0100 -0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_02_05_geom" mesh="lego" rgba="0.48 0.84 0.52 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_02_06" pos="0.0300 -0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_02_06_geom" mesh="lego" rgba="0.39 0.37 0.59 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_02_07" pos="0.0500 -0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_02_07_geom" mesh="lego" rgba="0.38 0.61 0.83 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_02_08" pos="0.0700 -0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_02_08_geom" mesh="lego" rgba="0.48 0.35 0.90 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_02_09" pos="0.0900 -0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_02_09_geom" mesh="lego" rgba="0.56 0.26 0.23 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_03_00" pos="-0.0900 -0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_03_00_geom" mesh="lego" rgba="0.28 0.64 0.75 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_03_01" pos="-0.0700 -0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_03_01_geom" mesh="lego" rgba="0.50 0.24 0.47 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_03_02" pos="-0.0500 -0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_03_02_geom" mesh="lego" rgba="0.90 0.57 0.88 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_03_03" pos="-0.0300 -0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_03_03_geom" mesh="lego" rgba="0.80 0.21 0.70 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_03_04" pos="-0.0100 -0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_03_04_geom" mesh="lego" rgba="0.68 0.58 0.39 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_03_05" pos="0.0100 -0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_03_05_geom" mesh="lego" rgba="0.65 0.28 0.50 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_03_06" pos="0.0300 -0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_03_06_geom" mesh="lego" rgba="0.52 0.87 0.81 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_03_07" pos="0.0500 -0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_03_07_geom" mesh="lego" rgba="0.38 0.55 0.33 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_03_08" pos="0.0700 -0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_03_08_geom" mesh="lego" rgba="0.84 0.81 0.41 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_03_09" pos="0.0900 -0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_03_09_geom" mesh="lego" rgba="0.65 0.63 0.31 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_04_00" pos="-0.0900 -0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_04_00_geom" mesh="lego" rgba="0.73 0.58 0.75 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_04_01" pos="-0.0700 -0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_04_01_geom" mesh="lego" rgba="0.57 0.20 0.43 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_04_02" pos="-0.0500 -0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_04_02_geom" mesh="lego" rgba="0.21 0.85 0.82 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_04_03" pos="-0.0300 -0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_04_03_geom" mesh="lego" rgba="0.78 0.42 0.24 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_04_04" pos="-0.0100 -0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_04_04_geom" mesh="lego" rgba="0.81 0.86 0.26 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_04_05" pos="0.0100 -0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_04_05_geom" mesh="lego" rgba="0.54 0.25 0.73 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_04_06" pos="0.0300 -0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_04_06_geom" mesh="lego" rgba="0.74 0.29 0.53 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_04_07" pos="0.0500 -0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_04_07_geom" mesh="lego" rgba="0.58 0.39 0.81 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_04_08" pos="0.0700 -0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_04_08_geom" mesh="lego" rgba="0.50 0.35 0.58 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_04_09" pos="0.0900 -0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_04_09_geom" mesh="lego" rgba="0.71 0.34 0.42 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_05_00" pos="-0.0900 0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_05_00_geom" mesh="lego" rgba="0.90 0.65 0.51 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_05_01" pos="-0.0700 0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_05_01_geom" mesh="lego" rgba="0.56 0.28 0.36 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_05_02" pos="-0.0500 0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_05_02_geom" mesh="lego" rgba="0.44 0.61 0.36 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_05_03" pos="-0.0300 0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_05_03_geom" mesh="lego" rgba="0.35 0.25 0.64 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_05_04" pos="-0.0100 0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_05_04_geom" mesh="lego" rgba="0.36 0.83 0.80 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_05_05" pos="0.0100 0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_05_05_geom" mesh="lego" rgba="0.25 0.37 0.67 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_05_06" pos="0.0300 0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_05_06_geom" mesh="lego" rgba="0.35 0.29 0.85 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_05_07" pos="0.0500 0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_05_07_geom" mesh="lego" rgba="0.60 0.53 0.75 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_05_08" pos="0.0700 0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_05_08_geom" mesh="lego" rgba="0.77 0.33 0.27 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_05_09" pos="0.0900 0.0100 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_05_09_geom" mesh="lego" rgba="0.50 0.50 0.53 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_06_00" pos="-0.0900 0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_06_00_geom" mesh="lego" rgba="0.71 0.67 0.89 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_06_01" pos="-0.0700 0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_06_01_geom" mesh="lego" rgba="0.27 0.48 0.44 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_06_02" pos="-0.0500 0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_06_02_geom" mesh="lego" rgba="0.80 0.37 0.33 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_06_03" pos="-0.0300 0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_06_03_geom" mesh="lego" rgba="0.51 0.50 0.39 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_06_04" pos="-0.0100 0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_06_04_geom" mesh="lego" rgba="0.37 0.85 0.51 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_06_05" pos="0.0100 0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_06_05_geom" mesh="lego" rgba="0.80 0.59 0.24 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_06_06" pos="0.0300 0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_06_06_geom" mesh="lego" rgba="0.90 0.79 0.88 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_06_07" pos="0.0500 0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_06_07_geom" mesh="lego" rgba="0.85 0.79 0.32 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_06_08" pos="0.0700 0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_06_08_geom" mesh="lego" rgba="0.54 0.35 0.48 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_06_09" pos="0.0900 0.0300 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_06_09_geom" mesh="lego" rgba="0.24 0.47 0.89 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_07_00" pos="-0.0900 0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_07_00_geom" mesh="lego" rgba="0.39 0.75 0.52 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_07_01" pos="-0.0700 0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_07_01_geom" mesh="lego" rgba="0.50 0.87 0.90 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_07_02" pos="-0.0500 0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_07_02_geom" mesh="lego" rgba="0.59 0.70 0.31 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_07_03" pos="-0.0300 0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_07_03_geom" mesh="lego" rgba="0.41 0.88 0.61 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_07_04" pos="-0.0100 0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_07_04_geom" mesh="lego" rgba="0.58 0.72 0.24 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_07_05" pos="0.0100 0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_07_05_geom" mesh="lego" rgba="0.61 0.55 0.80 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_07_06" pos="0.0300 0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_07_06_geom" mesh="lego" rgba="0.31 0.87 0.26 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_07_07" pos="0.0500 0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_07_07_geom" mesh="lego" rgba="0.33 0.62 0.67 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_07_08" pos="0.0700 0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_07_08_geom" mesh="lego" rgba="0.36 0.28 0.82 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_07_09" pos="0.0900 0.0500 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_07_09_geom" mesh="lego" rgba="0.37 0.62 0.63 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_08_00" pos="-0.0900 0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_08_00_geom" mesh="lego" rgba="0.49 0.61 0.57 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_08_01" pos="-0.0700 0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_08_01_geom" mesh="lego" rgba="0.85 0.34 0.70 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_08_02" pos="-0.0500 0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_08_02_geom" mesh="lego" rgba="0.37 0.48 0.67 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_08_03" pos="-0.0300 0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_08_03_geom" mesh="lego" rgba="0.41 0.42 0.73 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_08_04" pos="-0.0100 0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_08_04_geom" mesh="lego" rgba="0.25 0.52 0.90 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_08_05" pos="0.0100 0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_08_05_geom" mesh="lego" rgba="0.90 0.25 0.35 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_08_06" pos="0.0300 0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_08_06_geom" mesh="lego" rgba="0.39 0.85 0.82 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_08_07" pos="0.0500 0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_08_07_geom" mesh="lego" rgba="0.82 0.46 0.31 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_08_08" pos="0.0700 0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_08_08_geom" mesh="lego" rgba="0.78 0.69 0.63 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_08_09" pos="0.0900 0.0700 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_08_09_geom" mesh="lego" rgba="0.89 0.66 0.21 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_09_00" pos="-0.0900 0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_09_00_geom" mesh="lego" rgba="0.77 0.41 0.66 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_09_01" pos="-0.0700 0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_09_01_geom" mesh="lego" rgba="0.86 0.29 0.28 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_09_02" pos="-0.0500 0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_09_02_geom" mesh="lego" rgba="0.27 0.59 0.39 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_09_03" pos="-0.0300 0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_09_03_geom" mesh="lego" rgba="0.62 0.70 0.34 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_09_04" pos="-0.0100 0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_09_04_geom" mesh="lego" rgba="0.64 0.38 0.54 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_09_05" pos="0.0100 0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_09_05_geom" mesh="lego" rgba="0.83 0.79 0.26 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_09_06" pos="0.0300 0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_09_06_geom" mesh="lego" rgba="0.50 0.39 0.20 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_09_07" pos="0.0500 0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_09_07_geom" mesh="lego" rgba="0.74 0.65 0.38 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_09_08" pos="0.0700 0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_09_08_geom" mesh="lego" rgba="0.72 0.59 0.50 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_base_09_09" pos="0.0900 0.0900 0.0195">
+    <!-- 静态：无 freejoint -->
+    <geom type="sdf" name="lego_base_09_09_geom" mesh="lego" rgba="0.21 0.25 0.82 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>

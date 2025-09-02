@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="g2_hand_base">
+  <!-- SDF 插件（LEGO 用 sdf 接触时需要；若用普通mesh接触也兼容） -->
+  <extension>
+    <plugin plugin="mujoco.sdf.sdflib">
+      <instance name="sdflego">
+        <config key="aabb" value="0"/>
+      </instance>
+    </plugin>
+  </extension>
+
+  <option iterations="50" timestep="0.001" solver="PGS" gravity="0 0 -9.81"
+          cone="elliptic" impratio="10" sdf_iterations="50" sdf_initpoints="40"/>
+
+  <size nstack="500000"/>
+  <compiler angle="radian" meshdir="meshes" eulerseq="zyx" autolimits="true"/>
+
+  <default>
+    <joint limited="true" damping="0.01" armature="0.01" frictionloss="0.01"/>
+    <geom condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2"/>
+    <motor ctrllimited="true"/>
+    <equality solref="0.002 2"/>
+    <default class="visualgeom">
+      <geom material="visualgeom" condim="1" contype="0" conaffinity="0"/>
+    </default>
+  </default>
+
+  <asset>
+    <!-- 手的网格与材质 -->
+    <mesh name="base_link"  file="../base_link.STL"/>
+    <mesh name="left_link"  file="../left_link.STL"/>
+    <mesh name="right_link" file="../right_link.STL"/>
+    <material name="visualgeom" rgba="0.75 0.75 0.75 1"/>
+    <material name="mat_gray"   rgba="0.8 0.8 0.8 1"/>
+    <material name="mat_green"  rgba="0.2 0.7 0.2 1"/>
+  </asset>
+
+  <worldbody>
+    <!-- 简单地面（可要可不要） -->
+    <geom name="floor" type="plane" size="2 2 0.1" pos="0 0 -5" rgba="0.9 0.9 0.9 1"/>
+
+    <!-- mocap 体，用于外部精确定位 -->
+    <body name="palm_target" mocap="true" pos="0 0 0">
+      <site name="target_site" type="sphere" size="0.003" rgba="1 0 0 0.5"/>
+    </body>
+
+    <!-- 手的主体（命名为 palm，便于脚本里引用） -->
+    <body name="palm" pos="0 0 0.5" quat="0 1 0 0">
+      <freejoint name="palm_free"/>
+      <inertial pos="0 0 0" mass="0.05" diaginertia="1e-3 1e-3 1e-3"/>
+
+      <site name="gripper_center" type="sphere" size="0.008" rgba="1 0 0 1" pos="0 0 0"/>
+
+      <!-- 基座可视 & 碰撞 -->
+      <geom type="mesh" mesh="base_link" material="mat_gray" contype="1" conaffinity="0" group="1" class="visualgeom"/>
+      <geom type="mesh" mesh="base_link"/>
+
+      <!-- 左指 -->
+      <body name="left_link" pos="0 0 0.0635" quat="0.707105 0 -0.707108 0">
+        <inertial pos="0.018307 0 0.012505" quat="0 0.798204 0 0.602388"
+                  mass="0.054004" diaginertia="5.10732e-05 4.78e-05 2.24468e-05"/>
+        <joint name="left_joint"  type="slide" axis="0 0 1" range="0 0.0366"/>
+        <geom type="mesh" mesh="left_link"  contype="1" conaffinity="0" group="1" class="visualgeom"/>
+        <geom type="mesh" mesh="left_link"/>
+      </body>
+
+      <!-- 右指 -->
+      <body name="right_link" pos="0 0 0.0635" quat="-2.59734e-06 0.707105 2.59735e-06 0.707108">
+        <inertial pos="0.018307 0 0.012505" quat="0 0.798204 0 0.602388"
+                  mass="0.054004" diaginertia="5.10732e-05 4.78e-05 2.24468e-05"/>
+        <joint name="right_joint" type="slide" axis="0 0 1" range="0 0.0366"/>
+        <geom type="mesh" mesh="right_link" contype="1" conaffinity="0" group="1" class="visualgeom"/>
+        <geom type="mesh" mesh="right_link"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <!-- 焊接：把 palm 固定到 mocap（脚本里改 mocap 位姿即可移动手） -->
+  <equality>
+    <weld body1="palm" body2="palm_target"/>
+    <!-- ❌ 不要再绑左右手指（保持独立控制）：删除 joint1-joint2 约束 -->
+  </equality>
+
+  <actuator>
+    <!-- 手指电机（如需要更大夹力，可把 ctrlrange 改成 -5 5，并在脚本里加大扭矩） -->
+    <motor name="left_joint"  joint="left_joint"  ctrllimited="true" ctrlrange="-1 1" gear="1"/>
+    <motor name="right_joint" joint="right_joint" ctrllimited="true" ctrlrange="-1 1" gear="1"/>
+  </actuator>
+
+  <sensor>
+    <actuatorfrc name="leftF"  actuator="left_joint"/>
+    <actuatorfrc name="rightF" actuator="right_joint"/>
+    <framepos  name="gripper_position"    objtype="site" objname="gripper_center"/>
+  </sensor>
+
+  <include file="lego_unit.xml"/>
+</mujoco>

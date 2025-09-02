@@ -1,0 +1,12 @@
+<mujoco model="yaw_test">
+  <worldbody>
+    <body name="palm" pos="0 0 0.5">
+      <joint name="yaw" type="hinge" axis="0 0 1" range="-3.1416 3.1416"/>
+      <geom type="box" size="0.05 0.05 0.01" rgba="0.2 0.2 0.8 0.5"/>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <position name="rotation" joint="yaw" kp="2000" ctrlrange="-3.1416 3.1416"/>
+  </actuator>
+</mujoco>

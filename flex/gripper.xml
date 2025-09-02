@@ -1,0 +1,86 @@
+<mujoco model="Gripper">
+  <include file="scene.xml"/>
+
+  <!-- 保留一处 option，并开启 SDF 求解参数 -->
+  <option cone="elliptic" impratio="10" integrator="implicitfast"
+          sdf_iterations="15" sdf_initpoints="60"/>
+
+  <!-- SDF: 这里用 bowl 示例；若要椭球，把 plugin 换成 mujoco.sdf.ellipsoid 并配置轴长 -->
+  <extension>
+    <plugin plugin="mujoco.sdf.bowl">
+      <instance name="target_sdf">
+        <config key="height" value="0.10"/>
+        <config key="radius" value="0.02"/>
+        <config key="thickness" value="0.02"/>
+      </instance>
+    </plugin>
+  </extension>
+
+  <asset>
+    <!-- marching cubes 的可视化网格 -->
+    <mesh name="target_sdf_mesh">
+      <plugin instance="target_sdf"/>
+    </mesh>
+  </asset>
+  <asset>
+    <!-- marching cubes 的可视化网格 -->
+    <mesh name="target_sdf_mesh1">
+      <plugin instance="target_sdf"/>
+    </mesh>
+  </asset>
+  <worldbody>
+  <body name="hand" pos="0 0 0.40">
+    <!-- 允许手在 XY 平面和 Z 方向自由移动 -->
+    <joint name="x"    type="slide" axis="1 0 0" range="-0.25 0.25"/>
+    <joint name="y"    type="slide" axis="0 1 0" range="-0.25 0.25"/>
+    <joint name="lift" type="slide" axis="0 0 1" range="0.00 0.50"/>
+
+    <!-- 手掌和手指 -->
+    <geom name="palm" type="box" size="0.20 0.10 0.07" rgba=".2 .2 .2 1"/>
+    <body name="right_gripper">
+      <joint name="right" type="slide" axis="-1 0 0" range="0 0.1"/>
+      <geom name="right_finger" type="box" size="0.01 0.10 0.15" pos=".18 0 -.2" rgba=".2 .2 .2 1"/>
+    </body>
+    <body name="left_gripper">
+      <joint name="left" type="slide" axis="1 0 0" range="0 0.1"/>
+      <geom name="left_finger" type="box" size="0.01 0.10 0.15" pos="-.18 0 -.2" rgba=".2 .2 .2 1"/>
+    </body>
+  </body>
+
+    <!-- 把原来的小方块替换为 SDF 目标 -->
+    <body name="target" pos="0 0 .1">
+      <freejoint/>
+      <geom type="sdf" name="target_sdf_geom" mesh="target_sdf_mesh"
+            rgba=".5 .5 0 1" priority="1"
+            friction="0.8 0.01 0.001">
+        <plugin instance="target_sdf"/>
+      </geom>
+    </body>
+    <body name="target1" pos="0 0.08 .1">
+      <freejoint/>
+      <geom type="sdf" name="target_sdf_geom1" mesh="target_sdf_mesh1"
+            rgba=".5 .5 0 1" priority="1"
+            friction="0.8 0.01 0.001">
+        <plugin instance="target_sdf"/>
+      </geom>
+    </body>
+  </worldbody>
+
+  <equality>
+    <joint joint1="right" joint2="left"/>
+  </equality>
+
+  <tendon>
+    <fixed name="grasp">
+      <joint joint="right" coef="1"/>
+      <joint joint="left" coef="1"/>
+    </fixed>
+  </tendon>
+  <actuator>
+    <!-- 新增：XY 位置执行器，目标就是世界坐标的 x/y 位移（以手的 slide 为准） -->
+    <position name="x"    joint="x" kp="800" dampratio="1" ctrlrange="-0.25 0.25"/>
+    <position name="y"    joint="y" kp="800" dampratio="1" ctrlrange="-0.25 0.25"/>
+    <position name="lift"  joint="lift"  kp="600" dampratio="1" ctrlrange="0 1"/>
+    <position name="grasp" tendon="grasp" kp="200" dampratio="1" ctrlrange="0 1"/>
+  </actuator>
+</mujoco>

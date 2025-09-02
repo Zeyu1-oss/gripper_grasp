@@ -1,0 +1,76 @@
+<mujoco model="Gripper-with-LEGO">
+
+  <option timestep="0.001" gravity="0 0 -9.81"/>
+  <asset>
+    <mesh name="base_link" file="base_link.STL"/>
+    <mesh name="left_link" file="left_link.STL"/>
+    <mesh name="right_link" file="right_link.STL"/>
+    <material name="matplane" reflectance="0." texture="texplane" texrepeat="1 1" texuniform="true" />
+    <material name="visualgeom" rgba="0.5 0.9 0.2 1" />
+    
+    <!-- SDF 网格 -->
+    <mesh name="lego" file="lego.obj" scale="0.01 0.01 0.01">
+      <plugin instance="sdflego"/>
+    </mesh>
+    
+  </asset>
+
+  <worldbody>
+
+    <!-- mocap 用于外部控制 -->
+    <body mocap="true" name="gripper_mocap">
+      <geom type="sphere" size="0.01" rgba="1 0 0 0.3"/>
+    </body>
+
+    <!-- palm 本体 -->
+    <body name="palm" pos="0 0 0">
+      <freejoint/>
+      <site name="gripper_center" pos="0 0 0" size="0.01" rgba="0 1 0 1" type="sphere"/>
+      
+      <!-- base -->
+      <body name="base" pos="0 0 0.068">
+        <geom type="mesh" mesh="base_link" rgba="0.7 0.7 0.7 1"/>
+        
+        <!-- finger left -->
+        <body name="left_link" pos="0 0 0.0635">
+          <joint name="left_joint" type="slide" axis="0 0 1" range="0 0.02"/>
+          <geom type="mesh" mesh="left_link" rgba="0.8 0.8 0.8 1"/>
+          <site name="left_finger_tip" pos="0.03 0 0.01" size="0.003" rgba="1 0 0 0.5" type="sphere"/>
+        </body>
+
+        <!-- finger right -->
+        <body name="right_link" pos="0 0 0.0635">
+          <joint name="right_joint" type="slide" axis="0 0 1" range="0 0.02"/>
+          <geom type="mesh" mesh="right_link" rgba="0.8 0.8 0.8 1"/>
+          <site name="right_finger_tip" pos="0.03 0 0.01" size="0.003" rgba="0 0 1 0.5" type="sphere"/>
+        </body>
+      </body>
+    </body>
+
+    <!-- lego -->
+    <body name="lego" pos="0 0 0.02">
+      <freejoint/>
+      <geom type="mesh" mesh="lego" rgba="0.2 0.7 0.2 1"/>
+      <site name="lego_center" pos="0 0 0" size="0.003" rgba="0 0 1 1" type="sphere"/>
+    </body>
+  </worldbody>
+
+  <!-- equality: mocap 驱动 palm -->
+  <equality>
+    <weld body1="palm" body2="gripper_mocap"/>
+    <joint joint1="right_joint" joint2="left_joint"/>
+  </equality>
+
+  <!-- tendon for grasp -->
+  <tendon>
+    <fixed name="grasp">
+      <joint joint="right_joint" coef="1"/>
+      <joint joint="left_joint" coef="1"/>
+    </fixed>
+  </tendon>
+
+  <actuator>
+    <motor name="gripper_motor" tendon="grasp" ctrlrange="-0.02 0.02" gear="1"/>
+  </actuator>
+
+</mujoco>

@@ -1,0 +1,323 @@
+    <body name="lego_00" pos="-0.12 -0.06 0.2">
+        <freejoint/>
+        <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+
+        <geom type="sdf" name="lego_00_geom"  friction="2.0 0.01 0.00001" mesh="lego"  rgba="0.9 0.3 0.1 1">
+
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_01" pos="-0.06 -0.06 0.28">
+        <freejoint/>
+        <geom type="sdf" name="lego_01_geom" friction="2.0 0.01 0.00001"  mesh="lego"  rgba="0.9 0.6 0.1 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_02" pos="0.00 -0.06 0.29">
+        <freejoint/>
+        <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+
+        <geom type="sdf" name="lego_02_geom"  friction="2.0 0.01 0.00001" mesh="lego" rgba="0.2 0.7 0.2 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_03" pos="0.06 -0.06 0.18">
+        <freejoint/>
+        <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+
+        <geom type="sdf" name="lego_03_geom" friction="2.0 0.01 0.00001" mesh="lego"  rgba="0.2 0.5 0.9 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_04" pos="0.12 -0.06 0.09">
+        <freejoint/>
+        <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+
+        <geom type="sdf" name="lego_04_geom"  friction="2.0 0.01 0.0001" mesh="lego"  rgba="0.6 0.3 0.9 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+
+      <!-- 第 2 行 (y=+0.06) -->
+      <body name="lego_05" pos="-0.12 0.06 0.13">
+        <freejoint/>
+        <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+
+        <geom type="sdf" name="lego_05_geom"  friction="2.0 0.01 0.00001" mesh="lego"  rgba="0.9 0.3 0.1 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_06" pos="-0.06 0.06 0.3">
+        <freejoint/>
+        <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+
+        <geom type="sdf" name="lego_06_geom" friction="2.0 0.01 0.00001" mesh="lego"  rgba="0.9 0.6 0.1 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_07" pos="0.00 0.06 0.12">
+        <freejoint/>
+        <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+
+        <geom type="sdf" name="lego_07_geom"  friction="2.0 0.01 0.00001" mesh="lego"  rgba="0.2 0.7 0.2 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_08" pos="0.06 0.06 0.24">
+        <freejoint/>
+        <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+
+        <geom type="sdf" name="lego_08_geom"  friction="2.0 0.01 0.00001" mesh="lego"  rgba="0.2 0.5 0.9 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_09" pos="0.12 0.06 0.13">
+        <freejoint/>
+        <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+
+        <geom type="sdf" name="lego_09_geom"  friction="2.0 0.01 0.00001" mesh="lego"  rgba="0.6 0.3 0.9 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_12" pos="0.12 0.06 0.13">
+        <freejoint/>
+        <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+
+        <geom type="sdf" name="lego_12_geom"  friction="2.0 0.01 0.00001" mesh="lego"  rgba="0.6 0.3 0.9 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_10" pos="0.2 0.06 0.15">
+        <freejoint/>
+        <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+
+        <geom type="sdf" name="lego_10_geom"  friction="2.0 0.01 0.00001" mesh="lego"  rgba="0.6 0.3 0.9 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_11" pos="0.15 0.06 0.18">
+        <freejoint/>
+        <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+
+        <geom type="sdf" name="lego_11_geom"  friction="2.0 0.01 0.00001" mesh="lego"  rgba="0.6 0.3 0.9 1">
+          <plugin instance="sdflego"/>
+        </geom>
+      </body>
+      <body name="lego_20" pos="-0.107 -0.170 0.088">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_20_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.855 0.348 0.111 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_21" pos="0.014 -0.008 0.184">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_21_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.269 0.320 0.799 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_22" pos="0.010 -0.187 0.061">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_22_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.928 0.572 0.130 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_23" pos="0.033 -0.128 0.138">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_23_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.896 0.630 0.117 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_24" pos="-0.085 -0.167 0.193">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_24_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.411 0.572 0.750 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_25" pos="0.054 0.012 0.186">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_25_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.395 0.575 0.784 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_26" pos="0.011 0.074 0.128">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_26_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.177 0.458 0.879 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_27" pos="0.111 -0.029 0.136">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_27_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.165 0.688 0.165 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_28" pos="0.030 -0.029 0.106">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_28_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.392 0.521 0.742 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_29" pos="0.134 -0.167 0.157">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_29_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.288 0.251 0.785 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_30" pos="0.174 -0.026 0.193">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_30_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.204 0.823 0.830 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_31" pos="-0.166 0.112 0.098">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_31_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.353 0.534 0.768 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_32" pos="-0.029 0.110 0.125">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_32_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.248 0.703 0.241 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_33" pos="-0.027 -0.147 0.072">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_33_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.164 0.796 0.755 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_34" pos="0.111 -0.090 0.106">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_34_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.178 0.845 0.792 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_35" pos="0.094 -0.128 0.165">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_35_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.950 0.285 0.115 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_36" pos="0.134 0.153 0.166">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_36_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.170 0.452 0.865 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_37" pos="-0.170 -0.047 0.139" euler="0 23 90">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_37_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.197 0.476 0.887 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_38" pos="-0.107 -0.005 0.161">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_38_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.246 0.661 0.153 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_39" pos="0.051 -0.127 0.294">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_39_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.244 0.770 0.809 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_40" pos="0.174 -0.026 0.193">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_40_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.204 0.823 0.830 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_41" pos="-0.166 0.122 0.198">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_41_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.353 0.534 0.768 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_42" pos="-0.029 0.110 0.225">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_42_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.248 0.703 0.241 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_43" pos="-0.027 -0.147 0.172">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_43_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.164 0.796 0.755 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_44" pos="0.111 -0.090 0.126">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_44_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.178 0.845 0.792 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_45" pos="0.094 -0.128 0.265">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_45_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.950 0.285 0.115 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_46" pos="0.134 0.153 0.366">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_46_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.170 0.452 0.865 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_47" pos="-0.170 -0.047 0.339">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_47_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.197 0.476 0.887 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_48" pos="-0.107 -0.005 0.261">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_48_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.246 0.661 0.153 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_49" pos="0.051 -0.127 0.127">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_49_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.244 0.770 0.809 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_50" pos="0.174 -0.026 0.293">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_50_geom" friction="2.0 0.01 0.00001" mesh="lego" rgba="0.204 0.823 0.830 1">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+</body>

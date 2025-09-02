@@ -1,0 +1,7 @@
+{
+  "mesh": "lego.obj",
+  "scale": 0.01,
+  "table_height": 0.0,
+  "gripper_length": 0.04,
+  "grasps": []
+}

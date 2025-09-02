@@ -1,0 +1,701 @@
+<!-- 仅片段：放在 <worldbody> 内可 include -->
+  <body name="lego_drop_000" pos="0.1333 0.0150 0.2800" euler="0 0 257.98">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_000_geom" mesh="lego" rgba="0.56 0.39 0.78 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_001" pos="0.1104 0.0272 0.2800" euler="0 0 352.89">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_001_geom" mesh="lego" rgba="0.37 0.59 0.47 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_002" pos="-0.1161 -0.1229 0.2800" euler="0 0 331.87">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_002_geom" mesh="lego" rgba="0.56 0.82 0.80 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_003" pos="-0.0633 0.1317 0.2800" euler="0 0 99.45">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_003_geom" mesh="lego" rgba="0.75 0.49 0.85 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_004" pos="0.0977 0.1190 0.2800" euler="0 0 182.79">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_004_geom" mesh="lego" rgba="0.77 0.40 0.41 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_005" pos="0.1316 -0.0957 0.2800" euler="0 0 211.30">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_005_geom" mesh="lego" rgba="0.90 0.54 0.30 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_006" pos="-0.0827 -0.1311 0.2800" euler="0 0 193.89">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_006_geom" mesh="lego" rgba="0.44 0.59 0.58 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_007" pos="-0.0309 0.0398 0.2800" euler="0 0 163.92">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_007_geom" mesh="lego" rgba="0.43 0.33 0.69 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_008" pos="-0.1140 0.1419 0.2800" euler="0 0 205.85">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_008_geom" mesh="lego" rgba="0.36 0.74 0.23 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_009" pos="0.1203 0.1571 0.2800" euler="0 0 268.09">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_009_geom" mesh="lego" rgba="0.69 0.77 0.47 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_010" pos="-0.1568 0.0781 0.2800" euler="0 0 238.93">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_010_geom" mesh="lego" rgba="0.77 0.89 0.55 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_011" pos="0.1025 -0.0770 0.2800" euler="0 0 13.33">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_011_geom" mesh="lego" rgba="0.55 0.61 0.81 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_012" pos="0.0948 -0.1293 0.2800" euler="0 0 314.71">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_012_geom" mesh="lego" rgba="0.51 0.57 0.52 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_013" pos="0.1228 0.1183 0.2800" euler="0 0 260.08">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_013_geom" mesh="lego" rgba="0.49 0.66 0.31 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_014" pos="-0.0916 0.1045 0.2800" euler="0 0 169.02">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_014_geom" mesh="lego" rgba="0.88 0.44 0.68 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_015" pos="-0.0131 -0.0643 0.2800" euler="0 0 233.94">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_015_geom" mesh="lego" rgba="0.80 0.80 0.80 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_016" pos="-0.1572 -0.1013 0.2800" euler="0 0 136.80">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_016_geom" mesh="lego" rgba="0.42 0.70 0.73 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_017" pos="0.1541 -0.0729 0.2800" euler="0 0 314.06">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_017_geom" mesh="lego" rgba="0.23 0.25 0.64 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_018" pos="0.0467 -0.0331 0.2800" euler="0 0 331.53">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_018_geom" mesh="lego" rgba="0.90 0.72 0.50 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_019" pos="0.1588 0.0120 0.2800" euler="0 0 35.44">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_019_geom" mesh="lego" rgba="0.64 0.81 0.51 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_020" pos="0.1449 -0.1269 0.2800" euler="0 0 249.84">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_020_geom" mesh="lego" rgba="0.83 0.23 0.76 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_021" pos="0.1552 -0.1061 0.2800" euler="0 0 105.61">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_021_geom" mesh="lego" rgba="0.46 0.30 0.57 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_022" pos="-0.1292 -0.0216 0.2800" euler="0 0 203.73">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_022_geom" mesh="lego" rgba="0.75 0.32 0.26 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_023" pos="0.0754 -0.0615 0.2800" euler="0 0 313.50">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_023_geom" mesh="lego" rgba="0.63 0.37 0.84 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_024" pos="0.0350 0.0038 0.2800" euler="0 0 51.52">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_024_geom" mesh="lego" rgba="0.52 0.38 0.38 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_025" pos="-0.0809 0.0689 0.2800" euler="0 0 3.38">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_025_geom" mesh="lego" rgba="0.76 0.83 0.67 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_026" pos="-0.1644 0.1404 0.2800" euler="0 0 56.87">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_026_geom" mesh="lego" rgba="0.51 0.44 0.61 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_027" pos="0.0127 0.0724 0.2800" euler="0 0 230.02">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_027_geom" mesh="lego" rgba="0.50 0.38 0.79 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_028" pos="0.0798 0.0563 0.2800" euler="0 0 71.72">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_028_geom" mesh="lego" rgba="0.47 0.54 0.37 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_029" pos="-0.0448 -0.1419 0.2800" euler="0 0 205.89">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_029_geom" mesh="lego" rgba="0.60 0.89 0.41 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_030" pos="-0.0629 -0.0302 0.2800" euler="0 0 352.06">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_030_geom" mesh="lego" rgba="0.66 0.39 0.60 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_031" pos="0.1453 0.0585 0.2800" euler="0 0 246.89">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_031_geom" mesh="lego" rgba="0.72 0.23 0.62 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_032" pos="0.1329 0.0381 0.2800" euler="0 0 178.82">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_032_geom" mesh="lego" rgba="0.83 0.40 0.76 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_033" pos="-0.0657 0.0158 0.2800" euler="0 0 218.54">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_033_geom" mesh="lego" rgba="0.45 0.65 0.63 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_034" pos="-0.1649 -0.0703 0.2800" euler="0 0 244.00">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_034_geom" mesh="lego" rgba="0.70 0.66 0.79 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_035" pos="-0.0191 -0.0945 0.2800" euler="0 0 226.17">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_035_geom" mesh="lego" rgba="0.83 0.65 0.42 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_036" pos="-0.0088 0.1324 0.2800" euler="0 0 158.70">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_036_geom" mesh="lego" rgba="0.61 0.71 0.26 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_037" pos="-0.1370 0.0051 0.2800" euler="0 0 106.24">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_037_geom" mesh="lego" rgba="0.72 0.32 0.29 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_038" pos="0.1051 0.0829 0.2800" euler="0 0 194.19">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_038_geom" mesh="lego" rgba="0.88 0.57 0.84 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_039" pos="0.0570 -0.0909 0.2800" euler="0 0 298.97">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_039_geom" mesh="lego" rgba="0.38 0.78 0.54 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_040" pos="-0.0993 -0.1569 0.2800" euler="0 0 290.34">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_040_geom" mesh="lego" rgba="0.72 0.44 0.28 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_041" pos="-0.0842 -0.0082 0.2800" euler="0 0 346.64">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_041_geom" mesh="lego" rgba="0.30 0.88 0.80 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_042" pos="0.1154 -0.1410 0.2800" euler="0 0 260.72">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_042_geom" mesh="lego" rgba="0.89 0.88 0.76 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_043" pos="0.0515 -0.1632 0.2800" euler="0 0 131.68">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_043_geom" mesh="lego" rgba="0.75 0.21 0.58 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_044" pos="0.0828 0.0891 0.2800" euler="0 0 163.72">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_044_geom" mesh="lego" rgba="0.67 0.67 0.61 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_045" pos="0.0059 -0.1484 0.2800" euler="0 0 296.07">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_045_geom" mesh="lego" rgba="0.86 0.28 0.36 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_046" pos="-0.0144 0.0995 0.2800" euler="0 0 9.01">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_046_geom" mesh="lego" rgba="0.82 0.59 0.84 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_047" pos="0.0553 0.1610 0.2800" euler="0 0 79.69">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_047_geom" mesh="lego" rgba="0.24 0.78 0.84 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_048" pos="0.0315 0.1485 0.2800" euler="0 0 108.79">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_048_geom" mesh="lego" rgba="0.49 0.30 0.86 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_049" pos="0.0724 0.0016 0.2800" euler="0 0 109.57">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_049_geom" mesh="lego" rgba="0.54 0.27 0.82 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_050" pos="0.1311 0.0804 0.2800" euler="0 0 48.84">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_050_geom" mesh="lego" rgba="0.52 0.67 0.72 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_051" pos="-0.0834 0.0454 0.2800" euler="0 0 340.55">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_051_geom" mesh="lego" rgba="0.49 0.72 0.31 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_052" pos="0.0418 -0.0744 0.2800" euler="0 0 149.36">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_052_geom" mesh="lego" rgba="0.27 0.54 0.49 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_053" pos="-0.1394 -0.0707 0.2800" euler="0 0 342.55">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_053_geom" mesh="lego" rgba="0.22 0.46 0.51 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_054" pos="-0.0753 -0.0595 0.2800" euler="0 0 342.20">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_054_geom" mesh="lego" rgba="0.80 0.27 0.68 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_055" pos="0.0133 -0.1193 0.2800" euler="0 0 196.01">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_055_geom" mesh="lego" rgba="0.88 0.45 0.48 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_056" pos="0.0681 -0.1438 0.2800" euler="0 0 68.33">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_056_geom" mesh="lego" rgba="0.29 0.79 0.52 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_057" pos="-0.0305 0.0141 0.2800" euler="0 0 238.60">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_057_geom" mesh="lego" rgba="0.65 0.62 0.21 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_058" pos="-0.0489 0.0836 0.2800" euler="0 0 283.25">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_058_geom" mesh="lego" rgba="0.37 0.29 0.60 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_059" pos="0.0152 0.0341 0.2800" euler="0 0 24.70">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_059_geom" mesh="lego" rgba="0.74 0.35 0.35 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_060" pos="-0.0922 -0.0926 0.2800" euler="0 0 313.09">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_060_geom" mesh="lego" rgba="0.43 0.30 0.83 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_061" pos="-0.0212 -0.1554 0.2800" euler="0 0 1.02">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_061_geom" mesh="lego" rgba="0.80 0.30 0.29 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_062" pos="-0.0541 0.0591 0.2800" euler="0 0 90.24">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_062_geom" mesh="lego" rgba="0.32 0.66 0.22 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_063" pos="-0.0108 -0.1229 0.2800" euler="0 0 5.35">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_063_geom" mesh="lego" rgba="0.75 0.37 0.43 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_064" pos="-0.1561 0.0471 0.2800" euler="0 0 62.73">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_064_geom" mesh="lego" rgba="0.24 0.72 0.57 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_065" pos="-0.1484 -0.0399 0.2800" euler="0 0 268.44">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_065_geom" mesh="lego" rgba="0.53 0.74 0.56 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_066" pos="0.0862 -0.0399 0.2800" euler="0 0 39.26">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_066_geom" mesh="lego" rgba="0.55 0.86 0.23 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_067" pos="-0.1586 0.0130 0.2800" euler="0 0 281.96">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_067_geom" mesh="lego" rgba="0.81 0.57 0.52 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_068" pos="0.1650 -0.0495 0.2800" euler="0 0 347.05">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_068_geom" mesh="lego" rgba="0.24 0.54 0.48 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_069" pos="0.0495 0.0928 0.2800" euler="0 0 247.00">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_069_geom" mesh="lego" rgba="0.54 0.84 0.25 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_070" pos="-0.1233 0.0559 0.2800" euler="0 0 29.08">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_070_geom" mesh="lego" rgba="0.63 0.25 0.39 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_071" pos="0.0211 -0.0931 0.2800" euler="0 0 227.91">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_071_geom" mesh="lego" rgba="0.58 0.43 0.90 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_072" pos="-0.1096 0.0354 0.2800" euler="0 0 191.00">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_072_geom" mesh="lego" rgba="0.52 0.62 0.27 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_073" pos="-0.1293 -0.1565 0.2800" euler="0 0 252.64">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_073_geom" mesh="lego" rgba="0.80 0.66 0.74 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_074" pos="0.0629 0.0420 0.2800" euler="0 0 259.50">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_074_geom" mesh="lego" rgba="0.35 0.52 0.36 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_075" pos="-0.1314 0.0899 0.2800" euler="0 0 122.02">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_075_geom" mesh="lego" rgba="0.52 0.49 0.27 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_076" pos="-0.0236 -0.0427 0.2800" euler="0 0 153.64">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_076_geom" mesh="lego" rgba="0.67 0.46 0.31 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_077" pos="0.0684 -0.0213 0.2800" euler="0 0 332.27">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_077_geom" mesh="lego" rgba="0.25 0.78 0.27 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_078" pos="0.0772 0.1536 0.2800" euler="0 0 34.76">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_078_geom" mesh="lego" rgba="0.72 0.77 0.59 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_079" pos="0.0126 -0.0054 0.2800" euler="0 0 211.13">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_079_geom" mesh="lego" rgba="0.59 0.43 0.29 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_080" pos="-0.0213 0.0762 0.2800" euler="0 0 127.30">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_080_geom" mesh="lego" rgba="0.67 0.73 0.81 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_081" pos="-0.0101 -0.0196 0.2800" euler="0 0 259.58">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_081_geom" mesh="lego" rgba="0.88 0.62 0.45 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_082" pos="0.1456 -0.0073 0.2800" euler="0 0 208.05">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_082_geom" mesh="lego" rgba="0.35 0.66 0.36 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_083" pos="0.0207 -0.0647 0.2800" euler="0 0 38.96">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_083_geom" mesh="lego" rgba="0.79 0.46 0.73 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_084" pos="0.0873 0.0351 0.2800" euler="0 0 206.68">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_084_geom" mesh="lego" rgba="0.77 0.79 0.88 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_085" pos="0.0399 0.0362 0.2800" euler="0 0 294.63">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_085_geom" mesh="lego" rgba="0.63 0.65 0.22 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_086" pos="0.0529 -0.1132 0.2800" euler="0 0 334.47">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_086_geom" mesh="lego" rgba="0.78 0.39 0.33 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_087" pos="-0.1641 -0.0163 0.2800" euler="0 0 252.97">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_087_geom" mesh="lego" rgba="0.42 0.44 0.20 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_088" pos="0.0487 0.1348 0.2800" euler="0 0 313.15">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_088_geom" mesh="lego" rgba="0.60 0.48 0.30 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_089" pos="-0.1102 -0.0635 0.2800" euler="0 0 227.94">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_089_geom" mesh="lego" rgba="0.22 0.72 0.35 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_090" pos="-0.0586 -0.0824 0.2800" euler="0 0 151.14">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_090_geom" mesh="lego" rgba="0.44 0.46 0.71 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_091" pos="-0.1349 0.1524 0.2800" euler="0 0 279.66">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_091_geom" mesh="lego" rgba="0.60 0.26 0.24 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_092" pos="0.1488 0.1649 0.2800" euler="0 0 56.67">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_092_geom" mesh="lego" rgba="0.63 0.67 0.39 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_093" pos="-0.0097 0.0500 0.2800" euler="0 0 238.30">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_093_geom" mesh="lego" rgba="0.54 0.51 0.39 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_094" pos="-0.0502 -0.0550 0.2800" euler="0 0 271.78">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_094_geom" mesh="lego" rgba="0.28 0.50 0.40 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_095" pos="-0.0583 0.1552 0.2800" euler="0 0 244.26">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_095_geom" mesh="lego" rgba="0.54 0.67 0.23 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_096" pos="0.0141 -0.0286 0.2800" euler="0 0 142.29">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_096_geom" mesh="lego" rgba="0.62 0.21 0.41 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_097" pos="0.0858 -0.0978 0.2800" euler="0 0 76.04">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_097_geom" mesh="lego" rgba="0.30 0.38 0.43 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_098" pos="0.1624 0.1363 0.2800" euler="0 0 2.78">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_098_geom" mesh="lego" rgba="0.72 0.32 0.47 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>
+  <body name="lego_drop_099" pos="0.1096 -0.0005 0.2800" euler="0 0 253.32">
+    <freejoint/>
+    <inertial pos="0 0 0" mass="0.02" diaginertia="1e-6 1e-6 1e-6"/>
+    <geom type="sdf" name="lego_drop_099_geom" mesh="lego" rgba="0.55 0.78 0.76 1" friction="2.0 0.01 0.00001">
+      <plugin instance="sdflego"/>
+    </geom>
+  </body>

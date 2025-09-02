@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<robot name="g2">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="5.9308E-05 -3.262E-05 0.034814" rpy="0 0 0"/>
+      <mass value="0.488"/>
+      <inertia ixx="0.00089244" ixy="-2E-06" ixz="2E-08" iyy="0.00111055" iyz="-7.6E-07" izz="0.00042051"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/base_link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/base_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_link">
+    <inertial>
+      <origin xyz="0.018307 5.9636E-06 0.012505" rpy="0 0 0"/>
+      <mass value="0.054004"/>
+      <inertia ixx="2.46E-05" ixy="0" ixz="7.55E-06" iyy="4.78E-05" iyz="0" izz="4.892E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/left_link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/left_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_link">
+    <inertial>
+      <origin xyz="0.018307 -6.8572E-07 0.012505" rpy="0 0 0"/>
+      <mass value="0.054004"/>
+      <inertia ixx="2.46E-05" ixy="0" ixz="7.55E-06" iyy="4.78E-05" iyz="0" izz="4.892E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/right_link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/right_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_joint" type="prismatic">
+    <origin xyz="0 0 0.0635" rpy="0 -1.5708 0"/>
+    <parent link="base_link"/>
+    <child link="left_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="0.0366" effort="0" velocity="0"/>
+  </joint>
+  <joint name="right_joint" type="prismatic">
+    <origin xyz="0 0 0.0635" rpy="3.1416 -1.5708 0"/>
+    <parent link="base_link"/>
+    <child link="right_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="0.0366" effort="0" velocity="0"/>
+  </joint>
+</robot>

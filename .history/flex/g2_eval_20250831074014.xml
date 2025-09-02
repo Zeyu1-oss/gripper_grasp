@@ -1,0 +1,127 @@
+<mujoco model="Gripper-with-LEGO-tray">
+  <!-- 启用SDF插件（你已安装） -->
+  <extension>
+    <plugin plugin="mujoco.sdf.sdflib">
+      <instance name="sdflego">
+        <config key="aabb" value="0"/>
+      </instance>
+    </plugin>
+  </extension>
+
+  <option cone="elliptic" impratio="10"
+          integrator="implicitfast"
+          timestep="0.001"
+          sdf_iterations="50"
+          sdf_initpoints="40" />
+
+  <size nstack="500000" nuser_geom="0" />
+
+  <asset>
+    <!-- 夹爪几何 -->
+    <mesh name="base_link"  file="base_link.STL"/>
+    <mesh name="left_link"  file="left_link.STL"/>
+    <mesh name="right_link" file="right_link.STL"/>
+
+    <!-- LEGO 网格（与你生成抓取时一致的比例） -->
+    <mesh name="lego" file="lego.obj" scale="0.01 0.01 0.01">
+      <plugin instance="sdflego"/>
+    </mesh>
+
+    <!-- 简单材质 -->
+    <material name="mat_gray" rgba="0.8 0.8 0.8 1"/>
+    <material name="mat_green" rgba="0.2 0.7 0.2 1"/>
+  </asset>
+
+  <default>
+    <joint limited="true" damping="0.01" armature="0.01" frictionloss="0.001"/>
+    <geom  condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2"/>
+    <motor ctrllimited="true"/>
+    <equality solref="0.001 2"/>
+  </default>
+
+  <worldbody>
+    <!-- 参考地面 -->
+    <geom name="floor" type="plane" size="2 2 0.1" pos="0 0 0" material="mat_gray" rgba="0.9 0.9 0.9 1"/>
+
+    <!-- 默认相机（可按 Tab 切换） -->
+    <camera name="overview" pos="0.35 -0.45 0.30" xyaxes="1 0 0  0 1 0"/>
+
+    <!-- 夹爪掌心（6自由度） -->
+    <body name="palm" pos="0 0 0.2">
+      <joint name="x"     type="slide" axis="1 0 0"  range="-0.5 0.5"/>
+      <joint name="y"     type="slide" axis="0 1 0"  range="-0.5 0.5"/>
+      <joint name="z"     type="slide" axis="0 0 1"  range="-1   1.0"/>
+      <joint name="roll"  type="hinge" axis="1 0 0"  range="-3.14 3.14"/>
+      <joint name="pitch" type="hinge" axis="0 1 0"  range="-3.14 3.14"/>
+      <joint name="yaw"   type="hinge" axis="0 0 1"  range="-3.14 3.14"/>
+
+      <!-- 夹爪位姿观测站点 -->
+      <site name="gripper_center" type="sphere" size="0.008" rgba="1 0 0 1" pos="0 0 0"/>
+      <site name="approach_site"  type="sphere" size="0.006" rgba="0 1 0 1" pos="0 0 -0.05"/>
+
+      <!-- 夹爪本体 -->
+      <body name="base" pos="0 0 0.068" quat="0 1 0 0">
+        <geom type="mesh" mesh="base_link" material="mat_gray" contype="1" conaffinity="0"/>
+
+        <!-- 左指 -->
+        <body name="left_link" pos="0 0 0.0635" quat="0.707105 0 -0.707108 0">
+          <joint name="left_joint" type="slide" axis="0 0 1" range="0 0.015"/>
+          <geom type="mesh" mesh="left_link" material="mat_gray"/>
+        </body>
+
+        <!-- 右指 -->
+        <body name="right_link" pos="0 0 0.0635" quat="-2.59734e-06 0.707105 2.59735e-06 0.707108">
+          <joint name="right_joint" type="slide" axis="0 0 1" range="0 0.015"/>
+          <geom type="mesh" mesh="right_link" material="mat_gray"/>
+        </body>
+      </body>
+    </body>
+
+    <!-- LEGO 物体（SDF） -->
+    <body name="lego" pos="0 0 0.02">
+      <freejoint/>
+      <inertial pos="0 0 0" mass="0.02" diaginertia="0.001 0.001 0.001"/>
+      <geom type="sdf" name="lego_01" mesh="lego" material="mat_green" friction="2.0 0.01 0.00001">
+        <plugin instance="sdflego"/>
+      </geom>
+      <site name="lego_center" type="sphere" size="0.004" rgba="0 0 1 1"/>
+    </body>
+  </worldbody>
+
+  <!-- 只保留“腱+执行器”，去掉对等式冗余约束 -->
+  <tendon>
+    <fixed name="grasp">
+      <joint joint="right_joint" coef="1"/>
+      <joint joint="left_joint"  coef="1"/>
+    </fixed>
+  </tendon>
+
+  <actuator>
+    <!-- 六自由度位置控制 -->
+    <position name="x_actuator"     joint="x"     kp="2000" dampratio="1" ctrlrange="-0.5 0.5"/>
+    <position name="y_actuator"     joint="y"     kp="2000" dampratio="1" ctrlrange="-0.5 0.5"/>
+    <position name="z_actuator"     joint="z"     kp="2000" dampratio="1" ctrlrange="-1   1.0"/>
+    <position name="roll_actuator"  joint="roll"  kp="1500" dampratio="1" ctrlrange="-3.14 3.14"/>
+    <position name="pitch_actuator" joint="pitch" kp="1500" dampratio="1" ctrlrange="-3.14 3.14"/>
+    <position name="yaw_actuator"   joint="yaw"   kp="1500" dampratio="1" ctrlrange="-3.14 3.14"/>
+
+    <!-- 开口：腱长度位置控制（单位=米） -->
+    <position name="gripper_opening" tendon="grasp" kp="30000" dampratio="1" ctrllimited="true" ctrlrange="0 0.03"/>
+  </actuator>
+
+  <sensor>
+    <!-- 关节姿态 -->
+    <jointpos name="x_pos"     joint="x"/>
+    <jointpos name="y_pos"     joint="y"/>
+    <jointpos name="z_pos"     joint="z"/>
+    <jointpos name="roll_pos"  joint="roll"/>
+    <jointpos name="pitch_pos" joint="pitch"/>
+    <jointpos name="yaw_pos"   joint="yaw"/>
+
+    <!-- 物体与夹爪位姿 -->
+    <framepos  name="lego_position"     objtype="site" objname="lego_center"/>
+    <framequat name="lego_orientation"  objtype="site" objname="lego_center"/>
+    <framepos  name="gripper_position"  objtype="site" objname="gripper_center"/>
+    <framequat name="gripper_orientation" objtype="site" objname="gripper_center"/>
+  </sensor>
+</mujoco>

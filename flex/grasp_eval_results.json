@@ -1,0 +1,22 @@
+{
+  "xml": "g2_eval.xml",
+  "target": "lego_01",
+  "grasps_file": "grasps.json",
+  "processes": 1,
+  "success_count": 0,
+  "failed_count": 1,
+  "total_count": 1,
+  "success_rate": 0.0,
+  "results": [
+    {
+      "index": 0,
+      "success": false,
+      "reason": "执行错误: local variable 'max_drop' referenced before assignment",
+      "sumF": 0.0,
+      "final_z": 0.0,
+      "max_drop": 0.0,
+      "yaw_des_deg": 0.0,
+      "grasp_width": 0.0
+    }
+  ]
+}

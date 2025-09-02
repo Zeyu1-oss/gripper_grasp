@@ -1,0 +1,49 @@
+ <mujoco model="combined">
+
+  <include file="scene.xml"/>
+  
+  <extension>
+    <plugin plugin="mujoco.sdf.sdflib">
+      <instance name="sdflego">
+        <config key="aabb" value="0"/>
+      </instance>
+    </plugin>
+  </extension>
+
+  <asset>
+    <mesh name="base_link" file="../asset/base_link.STL"/>
+    <mesh name="left_link" file="../asset/left_link.STL"/>
+    <mesh name="right_link" file="../asset/right_link.STL"/>
+    <material name="matplane" reflectance="0." texture="texplane1" texrepeat="1 1" texuniform="true" />
+    <material name="visualgeom" rgba="0.5 0.9 0.2 1" />
+    
+    <!-- SDF 网格 -->
+    <mesh name="lego" file="../asset/lego.obj" scale="0.01 0.01 0.01">
+      <plugin instance="sdflego"/>
+    </mesh>
+  </asset>
+
+  <default>
+    <joint limited="true" damping="0.01" armature="0.01" frictionloss="0.001" />
+    <geom condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2" />
+    <motor ctrllimited="true" />
+    <equality solref="0.001 2" />
+    <default class="visualgeom">
+      <geom material="visualgeom" condim="1" contype="0" conaffinity="0" />
+    </default>
+  </default>
+
+  <!-- SDF 求解参数 -->
+  <option cone="elliptic" impratio="10" integrator="implicitfast"
+          sdf_iterations="50" sdf_initpoints="40" 
+          timestep="0.001"/>
+
+  <worldbody>
+    <!-- 抓取器 -->
+    <include file="gripper.xml"/>
+    
+    <!-- LEGO物体 -->
+    <include file="lego.xml"/>
+  </worldbody>
+
+</mujoco>

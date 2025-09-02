@@ -1,0 +1,17 @@
+<mujocoinclude>
+  <asset>
+    <mesh name="lego" file="../../lego.obj" scale="0.01 0.01 0.01">
+      <plugin instance="sdflego"/>
+    </mesh>
+  </asset>
+  <worldbody>
+    <body name="lego" pos="0 0 0">
+      <freejoint/>
+      <inertial pos="0 0 0" mass="0.02" diaginertia="1.3e-6 1.3e-6 1.3e-6"/>
+      <geom type="sdf" name="lego_01" mesh="lego" material="mat_green" friction="2.0 0.01 0.00001">
+        <plugin instance="sdflego"/>
+      </geom>
+      <site name="lego_center" type="sphere" size="0.004" rgba="0 0 1 1"/>
+    </body>
+  </worldbody>
+</mujocoinclude>

@@ -1,0 +1,49 @@
+<mujoco model="gripper">
+  <option timestep="0.001" gravity="0 0 -9.81"/>
+
+  <worldbody>
+    <!-- Gripper 根节点，freejoint，原点在两指尖中点 -->
+    <body name="gripper" pos="0 0 0.3">
+      <freejoint/>
+
+      <site name="gripper_center" pos="0 0 0" size="0.005" rgba="1 0 0 1"/>
+
+      <!-- Left finger -->
+      <body name="left_finger" pos="-0.01 0 0">
+        <joint name="left_joint" type="slide" axis="1 0 0" range="0 0.02"/>
+        <geom type="box" size="0.005 0.01 0.02" rgba="0.8 0.2 0.2 1"/>
+        <site name="left_tip" pos="0.0 0 0.02" size="0.003" rgba="1 0 0 0.5"/>
+      </body>
+
+      <!-- Right finger -->
+      <body name="right_finger" pos="0.01 0 0">
+        <joint name="right_joint" type="slide" axis="1 0 0" range="-0.02 0"/>
+        <geom type="box" size="0.005 0.01 0.02" rgba="0.2 0.2 0.8 1"/>
+        <site name="right_tip" pos="0.0 0 0.02" size="0.003" rgba="0 1 0 0.5"/>
+      </body>
+    </body>
+
+    <!-- LEGO -->
+    <body name="lego" pos="0 0 0.05">
+      <freejoint/>
+      <geom type="box" size="0.01 0.01 0.01" rgba="0.2 0.7 0.2 1"/>
+      <site name="lego_center" pos="0 0 0" size="0.003" rgba="0 0 1 1"/>
+    </body>
+  </worldbody>
+
+  <!-- Coupling 两个手指对称 -->
+  <equality>
+    <joint joint1="left_joint" joint2="right_joint"/>
+  </equality>
+
+  <tendon>
+    <fixed name="grasp">
+      <joint joint="left_joint" coef="1"/>
+      <joint joint="right_joint" coef="1"/>
+    </fixed>
+  </tendon>
+
+  <actuator>
+    <motor name="gripper_motor" tendon="grasp" ctrlrange="0 0.02" gear="1"/>
+  </actuator>
+</mujoco>

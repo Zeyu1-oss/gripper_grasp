@@ -1,0 +1,37 @@
+import mujoco
+import mujoco.viewer
+import numpy as np
+from scipy.spatial.transform import Rotation as R
+import time
+
+def mat2eulerZYX(Rmat):
+    U, _, Vt = np.linalg.svd(Rmat)
+    Rmat = U @ Vt
+    if np.linalg.det(Rmat) < 0:
+        Rmat *= -1
+    return R.from_matrix(Rmat).as_euler('zyx', degrees=False)[::-1]
+
+def set_gripper_pose(data, center, Rmat):
+    roll, pitch, yaw = mat2eulerZYX(Rmat)
+    data.qpos[0:3] = center
+    data.qpos[3:6] = [roll, pitch, yaw]
+
+def set_gripper_opening(data, opening):
+    data.qpos[6] = opening / 2
+    data.qpos[7] = opening / 2
+
+xml_path = "gripper_with_lego.xml"
+model = mujoco.MjModel.from_xml_path(xml_path)
+data = mujoco.MjData(model)
+
+# 示例：一个6D抓取姿态 (center + rotation matrix)
+center = np.array([0, 0, 0.1])
+Rmat = np.eye(3)
+
+set_gripper_pose(data, center, Rmat)
+set_gripper_opening(data, 0.03)
+
+with mujoco.viewer.launch_passive(model, data) as viewer:
+    while viewer.is_running():
+        mujoco.mj_step(model, data)
+        viewer.sync()

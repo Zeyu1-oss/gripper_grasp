@@ -1,0 +1,35 @@
+<mujoco model="gripper">
+  <worldbody>
+    <body name="gripper" pos="0 0 0.3">
+      <freejoint/>
+      <site name="gripper_center" pos="0 0 0" size="0.005" rgba="1 0 0 1"/>
+
+      <!-- 左手指 -->
+      <body name="left_finger" pos="-0.01 0 0">
+        <joint name="left_joint" type="slide" axis="1 0 0" range="0 0.02"/>
+        <geom type="box" size="0.005 0.01 0.02" rgba="0.8 0.2 0.2 1"/>
+      </body>
+
+      <!-- 右手指 -->
+      <body name="right_finger" pos="0.01 0 0">
+        <joint name="right_joint" type="slide" axis="1 0 0" range="-0.02 0"/>
+        <geom type="box" size="0.005 0.01 0.02" rgba="0.2 0.2 0.8 1"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <equality>
+    <joint joint1="left_joint" joint2="right_joint"/>
+  </equality>
+
+  <tendon>
+    <fixed name="grasp">
+      <joint joint="left_joint" coef="1"/>
+      <joint joint="right_joint" coef="1"/>
+    </fixed>
+  </tendon>
+
+  <actuator>
+    <motor name="gripper_motor" tendon="grasp" ctrlrange="0 0.02" gear="1"/>
+  </actuator>
+</mujoco>
